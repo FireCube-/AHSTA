@@ -1,27 +1,42 @@
-public static Parser {
+import java.io.BufferedReader;
+import java.io.IOException;
 
-	public String getTag(BufferedReader br) {
-		char in = br.read();
-		while (in != '<') {
-			in = br.read();
+public class Parser {
+
+	public static String getTag(BufferedReader br) {
+		try {
+			char in = (char) br.read();
+			while (in != '<') {
+				in = (char) br.read();
+			}
+			String tag = "";
+			while (in != '>') {
+				tag += in;
+			}
+			return tag;
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+			System.err.println(e.getStackTrace());
 		}
-		String tag = "";
-		while (in != '>') {
-			tag += in;
-		}
-		return tag;
+		return "";
 	}
 
-	public String getContent(BufferedReader br) {
-		br.mark(1);
-		char in = br.read();
-		String content = "";
-		while (in != '<') {
-			content += in;
+	public static String getContent(BufferedReader br) {
+		try {
 			br.mark(1);
+			char in = (char) br.read();
+			String content = "";
+			while (in != '<') {
+				content += in;
+				br.mark(1);
+			}
+			br.reset();
+			return content;
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+			System.err.println(e.getStackTrace());
 		}
-		br.reset();
-		return content;
+		return "";
 	}
 
 }

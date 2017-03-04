@@ -1,14 +1,16 @@
+import java.util.*;
+
 public class Inventory {
 
-	ArrayList<Item> items;
+	private ArrayList<Item> items;
 
-	boolean addItem(String type) {
-		items.add(new Item(type));
+	public boolean addItem(String type) {
+		return items.add(new Item(type));
 	}
 
-	boolean removeItem(String type) {
+	public boolean removeItem(String type) {
 		for (int i = 0; i < items.size(); i++) {
-			if (i.getType() == type) {
+			if (items.get(i).getType() == type) {
 				items.remove(i);
 				return true;
 			}
