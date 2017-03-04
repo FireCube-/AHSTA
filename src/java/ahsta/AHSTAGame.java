@@ -1,11 +1,5 @@
 package ahsta;
 
-import java.io.Serializable;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
 import com.amazon.speech.speechlet.Session;
 
 /**

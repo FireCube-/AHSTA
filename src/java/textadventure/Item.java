@@ -1,3 +1,4 @@
+package textadventure;
 
 public class Item extends Entity{
 
@@ -9,4 +10,6 @@ public class Item extends Entity{
 		super(name);
 	}
 
+	
+	
 }

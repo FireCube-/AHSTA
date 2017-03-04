@@ -1,9 +1,6 @@
 package ahsta;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import textadventure.Game;
 
 /**
  * Contains player and score data to represent a score keeper game.

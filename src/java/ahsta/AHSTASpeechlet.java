@@ -67,5 +67,9 @@ public class AHSTASpeechlet implements Speechlet {
 		log.info("onSessionEnded requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 
 	}
+	
+	public void initializeComponents() {
+		
+	}
 
 }

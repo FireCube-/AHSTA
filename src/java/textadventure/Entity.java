@@ -1,3 +1,4 @@
+package textadventure;
 import java.util.HashSet;
 
 public class Entity {

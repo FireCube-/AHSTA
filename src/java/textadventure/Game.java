@@ -1,12 +1,8 @@
+package textadventure;
 import java.io.FileReader;
 import java.io.BufferedReader;
 
 public class Game {
-
-	//save game state:
-	//	Location name
-	//	Inventory items
-
 
 	private Location location;
 	private Inventory inventory;
