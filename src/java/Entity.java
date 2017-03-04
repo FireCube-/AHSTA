@@ -12,15 +12,18 @@ public class Entity {
 	Entity(String name){
 		this.name = name;
 	}
+
 	Entity(String name, String desc){
 		this.name = name;
 		this.desc = desc;
 	}
+
 	Entity(String name, String desc, String state){
 		this.name  = name;
 		this.desc  = desc;
 		this.state = state;
 	}
+
 	Entity(String name, String desc, String state, String[] properties){
 		this.name  = name;
 		this.desc  = desc;
@@ -31,6 +34,7 @@ public class Entity {
 		}
 		
 	}
+
 	Entity(String name, String desc, String[] properties){
 		this.name = name;
 		this.desc = desc;
@@ -41,27 +45,27 @@ public class Entity {
 		
 	}
 	
-	String ToString(){
+	String getName(){
 		return name;
 	}
 	
-	String View(){
+	String view(){
 		return desc;
 	}
 	
-	boolean HasProperty(String prop){
+	boolean hasProperty(String prop){
 		if (properties.contains(prop))
 			return true;
 		return false;
 	}
 	
-	boolean InState(String state){
+	boolean inState(String state){
 		if (state.equals(this.state))
 			return true;
 		return false;
 	}
 	
-	void ChangeState(String state){
+	void changeState(String state){
 		this.state = state;
 	}
 }

@@ -1,14 +1,12 @@
 
 public class Item extends Entity{
 
-	Item(String name, String desc) {
+	public  Item(String name, String desc) {
 		super(name, desc);
 	}
-	Item(String name) {
+	
+	public Item(String name) {
 		super(name);
 	}
-	
-	
-	
-	
+
 }
