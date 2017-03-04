@@ -1,0 +1,7 @@
+<save>
+	<name>savegame1</name>
+	<location>room1</location>
+	<direction>north</direction>
+	<item>aijdas</item>
+	<state changes>
+</save>
