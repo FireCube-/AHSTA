@@ -6,6 +6,7 @@
     { "intent": "Option3Intent" },
     { "intent": "Option4Intent" },
     { "intent": "NewGameIntent" },
-    { "intent": "AMAZON.StopIntent" }
+      { "intent": "AMAZON.StopIntent" }
+    
     ]
 }
