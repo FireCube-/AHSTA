@@ -1,24 +1,26 @@
-option1 pick option one
-option1 choose option one
-option1 option one
-option1 do option one 
-option1 first option
-option2 pick option two
-option2 choose option two
-option2 option two
-option2 do option two 
-option2 second option
-option3 pick option three
-option3 choose option three
-option3 option three
-option3 do option three 
-option3 third option
-option4 pick option four
-option4 choose option four
-option4 option four
-option4 do option four 
-option4 fourth option
-launch launch the almost harvesting season adventure game
-launch launch almost harvesting season adventure game
-launch play the almost harvesting season adventure game
-launch play almost harvesting season adventure game
+Option1Intent pick option one
+Option1Intent choose option one
+Option1Intent option one
+Option1Intent do option one 
+Option1Intent first option
+Option2Intent pick option two
+Option2Intent choose option two
+Option2Intent option two
+Option2Intent do option two 
+Option2Intent second option
+Option3Intent pick option three
+Option3Intent choose option three
+Option3Intent option three
+Option3Intent do option three 
+Option3Intent third option
+Option4Intent pick option four
+Option4Intent choose option four
+Option4Intent option four
+Option4Intent do option four 
+Option4Intent fourth option
+NewGameIntent start new game
+NewGameIntent begin new game
+NewGameIntent new game
+AMAZON.StopIntent exit
+AMAZON.StopIntent stop
+
