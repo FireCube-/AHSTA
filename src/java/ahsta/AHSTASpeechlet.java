@@ -12,11 +12,19 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+
+import scorekeeper.ScoreKeeperManager;
+import scorekeeper.SkillContext;
 
 
 public class AHSTASpeechlet implements Speechlet {
 
 	private static final Logger log = LoggerFactory.getLogger(AHSTASpeechlet.class);
+	
+    private AmazonDynamoDBClient amazonDynamoDBClient;
+
+    private AHSTAGameManager ahstaGameManager;
 	
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
@@ -30,7 +38,7 @@ public class AHSTASpeechlet implements Speechlet {
 	//not sure whether to use this or an intent to launch the program - keeping it here for now
 	public SpeechletResponse onLaunch(LaunchRequest request, Session session) throws SpeechletException {
 		log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-		return AHSTAGameManager.getLaunchResponse(request, session);
+		return ahstaGameManager.getLaunchResponse(request, session);
 }
 
 	@Override
@@ -40,22 +48,22 @@ public class AHSTASpeechlet implements Speechlet {
 
 		Intent intent = request.getIntent();
 		if ("Option1Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption1IntentResponse(intent, session);
+			return ahstaGameManager.getOption1IntentResponse(intent, session);
 
 		} else if ("Option2Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption2IntentResponse(intent, session);
+			return ahstaGameManager.getOption2IntentResponse(intent, session);
 
 		} else if ("Option3Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption3IntentResponse(intent, session);
+			return ahstaGameManager.getOption3IntentResponse(intent, session);
 
 		} else if ("Option4Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption4IntentResponse(intent, session);
+			return ahstaGameManager.getOption4IntentResponse(intent, session);
 
 		} else if ("NewGameIntent".equals(intent.getName())) {
-			return AHSTAGameManager.getNewGameIntentResponse(intent, session);
+			return ahstaGameManager.getNewGameIntentResponse(intent, session);
 
 		} else if ("AMAZON.StopIntent".equals(intent.getName())) {
-			return AHSTAGameManager.getExitIntentResponse(intent, session);
+			return ahstaGameManager.getExitIntentResponse(intent, session);
 
 		} else {
 			throw new IllegalArgumentException("Unrecognized intent: " + intent.getName());
@@ -69,7 +77,10 @@ public class AHSTASpeechlet implements Speechlet {
 	}
 	
 	public void initializeComponents() {
-		
+        if (amazonDynamoDBClient == null) {
+            amazonDynamoDBClient = new AmazonDynamoDBClient();
+            ahstaGameManager = new AHSTAGameManager(amazonDynamoDBClient);
+        }
 	}
 
 }

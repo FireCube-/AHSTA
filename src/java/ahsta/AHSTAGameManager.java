@@ -4,7 +4,12 @@ import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import com.amazon.speech.ui.PlainTextOutputSpeech;
+import com.amazon.speech.ui.Reprompt;
+import com.amazon.speech.ui.SimpleCard;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+
+import scorekeeper.storage.ScoreKeeperGame;
 
 public class AHSTAGameManager {
 
@@ -16,28 +21,71 @@ public class AHSTAGameManager {
         ahstaGameDao = new AHSTAGameDao(dynamoDbClient);
     }
     //placeholder
-    public static SpeechletResponse getLaunchResponse(LaunchRequest requst, Session session) {
+    public SpeechletResponse getLaunchResponse(LaunchRequest request, Session session) {
     	return null;
     }    
-    public static SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
+    public SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
         return null;
     }
-    public static SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
+    public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
         return null;
     }
-    public static SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
+    public SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
         return null;
     }
-    public static SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
+    public SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
         return null;
     }
-    public static SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
-        return null;
+    public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
+        AHSTAGame game = ahstaGameDao.getAHSTAGame(session);
+
+        if (game == null) {
+            return getTellSpeechletResponse("Hello! New game started! TEST TEST TEST");
+        }
+
+        ahstaGameDao.saveAHSTAGame(game);
+
+        String speechText = "New game started with!";
+
+       
+        return getTellSpeechletResponse(speechText);
     }
-    public static SpeechletResponse getExitIntentResponse (Intent intent, Session session){
+    public SpeechletResponse getExitIntentResponse (Intent intent, Session session){
         return null;
     }
 
+    
+    private SpeechletResponse getTellSpeechletResponse(String speechText) {
+        // Create the Simple card content.
+        SimpleCard card = new SimpleCard();
+        card.setTitle("Session");
+        card.setContent(speechText);
+
+        // Create the plain text output.
+        PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+        speech.setText(speechText);
+
+        return SpeechletResponse.newTellResponse(speech, card);
+    }
+    
+    private SpeechletResponse getAskSpeechletResponse(String speechText, String repromptText) {
+        // Create the Simple card content.
+        SimpleCard card = new SimpleCard();
+        card.setTitle("Session");
+        card.setContent(speechText);
+
+        // Create the plain text output.
+        PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+        speech.setText(speechText);
+
+        // Create reprompt
+        PlainTextOutputSpeech repromptSpeech = new PlainTextOutputSpeech();
+        repromptSpeech.setText(repromptText);
+        Reprompt reprompt = new Reprompt();
+        reprompt.setOutputSpeech(repromptSpeech);
+
+        return SpeechletResponse.newAskResponse(speech, reprompt, card);
+    }
 
 
 	
