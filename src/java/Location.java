@@ -6,6 +6,7 @@ public class Location {
 	ArrayList<Connection> connections = new ArrayList<Connection>();
 	
 	String desc;
+	ArrayList<Entity> entities = new ArrayList<Entity>();
 	
 	
 	Location(String name){

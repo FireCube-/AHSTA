@@ -16,4 +16,10 @@ public class Connection {
 		this.desc = desc;
 	}
 	
+	String ToString(){
+		return name;
+	}
+	String View(){
+		return desc;
+	}
 }
