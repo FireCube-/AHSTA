@@ -12,6 +12,27 @@ public class AHSTAGameManager {
                 new ScoreKeeperDynamoDbClient(amazonDynamoDbClient);
         ahstaGameDao = new AHSTAGameDao(dynamoDbClient);
     }
+    //placeholder
+    public SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
+        return null;
+    }
+    public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
+        return null;
+    }
+    public SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
+        return null;
+    }
+    public SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
+        return null;
+    }
+    public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
+        return null;
+    }
+    public SpeechletResponse getExitIntentResponse (Intent intent, Session session){
+        return null;
+    }
+
+
 
 	
 }
