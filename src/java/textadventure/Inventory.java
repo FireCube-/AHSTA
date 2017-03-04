@@ -11,7 +11,7 @@ public class Inventory {
 
 	public boolean removeItem(String type) {
 		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).getType() == type) {
+			if (items.get(i).getName() == type) {
 				items.remove(i);
 				return true;
 			}
