@@ -10,28 +10,19 @@ import java.util.Map;
  */
 public class AHSTAGameData {
     
-	
+	private Game game;
 
     public AHSTAGameData() {
         // public no-arg constructor required for DynamoDBMapper marshalling
     }
 
-    /**
-     * Creates a new instance of {@link ScoreKeeperGameData} with initialized but empty player and
-     * score information.
-     * 
-     * @return
-     */
     public static AHSTAGameData newInstance() {
     	AHSTAGameData newInstance = new AHSTAGameData();
-        newInstance.setPlayers(new ArrayList<String>());
-        newInstance.setScores(new HashMap<String, Long>());
+    	newInstance.setGame(new Game());
         return newInstance;
     }
-
-
-    @Override
-    public String toString() {
-        return "[ScoreKeeperGameData players: " + players + "] scores: " + scores + "]";
+    
+    public void setGame(Game game) {
+    	this.game = game;
     }
 }

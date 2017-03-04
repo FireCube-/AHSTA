@@ -11,6 +11,12 @@ public class Game {
 	private Location location;
 	private Inventory inventory;
 
+	public Game() {
+		location = new Location("");
+		inventory = new Inventory();
+		
+	}
+	
 	public Game(String story) {
 		//Creates a new save of the story name.
 	}

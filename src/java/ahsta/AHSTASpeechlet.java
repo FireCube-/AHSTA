@@ -3,6 +3,7 @@ package ahsta;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
@@ -20,7 +21,8 @@ public class AHSTASpeechlet implements Speechlet {
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-initializeComponents();
+		
+		initializeComponents();
 	}
 
 	@Override
