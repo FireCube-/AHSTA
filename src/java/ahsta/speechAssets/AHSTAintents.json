@@ -1,0 +1,11 @@
+{
+  "intents": 
+    [
+    { "intent": "Option1Intent" },
+    { "intent": "Option2Intent" },
+    { "intent": "Option3Intent" },
+    { "intent": "Option4Intent" },
+    { "intent": "NewGameIntent" },
+    { "intent": "AMAZON.StopIntent" }
+    ]
+}
