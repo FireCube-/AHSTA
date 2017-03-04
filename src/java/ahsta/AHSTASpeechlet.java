@@ -3,6 +3,7 @@ package ahsta;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
@@ -11,16 +12,25 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+
+import scorekeeper.ScoreKeeperManager;
+import scorekeeper.SkillContext;
 
 
 public class AHSTASpeechlet implements Speechlet {
 
 	private static final Logger log = LoggerFactory.getLogger(AHSTASpeechlet.class);
 	
+    private AmazonDynamoDBClient amazonDynamoDBClient;
+
+    private AHSTAGameManager ahstaGameManager;
+	
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-initializeComponents();
+		
+		initializeComponents();
 	}
 
 	@Override
@@ -28,7 +38,7 @@ initializeComponents();
 	//not sure whether to use this or an intent to launch the program - keeping it here for now
 	public SpeechletResponse onLaunch(LaunchRequest request, Session session) throws SpeechletException {
 		log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-		return AHSTAGameManager.getLaunchResponse(request, session);
+		return ahstaGameManager.getLaunchResponse(request, session);
 }
 
 	@Override
@@ -38,22 +48,22 @@ initializeComponents();
 
 		Intent intent = request.getIntent();
 		if ("Option1Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption1IntentResponse(intent, session);
+			return ahstaGameManager.getOption1IntentResponse(intent, session);
 
 		} else if ("Option2Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption2IntentResponse(intent, session);
+			return ahstaGameManager.getOption2IntentResponse(intent, session);
 
 		} else if ("Option3Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption3IntentResponse(intent, session);
+			return ahstaGameManager.getOption3IntentResponse(intent, session);
 
 		} else if ("Option4Intent".equals(intent.getName())) {
-			return AHSTAGameManager.getOption4IntentResponse(intent, session);
+			return ahstaGameManager.getOption4IntentResponse(intent, session);
 
 		} else if ("NewGameIntent".equals(intent.getName())) {
-			return AHSTAGameManager.getNewGameIntentResponse(intent, session);
+			return ahstaGameManager.getNewGameIntentResponse(intent, session);
 
 		} else if ("AMAZON.StopIntent".equals(intent.getName())) {
-			return AHSTAGameManager.getExitIntentResponse(intent, session);
+			return ahstaGameManager.getExitIntentResponse(intent, session);
 
 		} else {
 			throw new IllegalArgumentException("Unrecognized intent: " + intent.getName());
@@ -64,6 +74,13 @@ initializeComponents();
 	public void onSessionEnded(SessionEndedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionEnded requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 
+	}
+	
+	public void initializeComponents() {
+        if (amazonDynamoDBClient == null) {
+            amazonDynamoDBClient = new AmazonDynamoDBClient();
+            ahstaGameManager = new AHSTAGameManager(amazonDynamoDBClient);
+        }
 	}
 
 }

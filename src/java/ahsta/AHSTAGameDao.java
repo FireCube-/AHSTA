@@ -6,9 +6,9 @@ import com.amazon.speech.speechlet.Session;
  * Contains the methods to interact with the persistence layer for ScoreKeeper in DynamoDB.
  */
 public class AHSTAGameDao {
-    private final ScoreKeeperDynamoDbClient dynamoDbClient;
+    private final AHSTADynamoDbClient dynamoDbClient;
 
-    public AHSTAGameDao(ScoreKeeperDynamoDbClient dynamoDbClient) {
+    public AHSTAGameDao(AHSTADynamoDbClient dynamoDbClient) {
         this.dynamoDbClient = dynamoDbClient;
     }
 
@@ -20,8 +20,8 @@ public class AHSTAGameDao {
      * @param session
      * @return
      */
-    public ScoreKeeperGame getScoreKeeperGame(Session session) {
-        ScoreKeeperUserDataItem item = new ScoreKeeperUserDataItem();
+    public AHSTAGame getAHSTAGame(Session session) {
+        AHSTAGameDataItem item = new AHSTAGameDataItem();
         item.setCustomerId(session.getUser().getUserId());
 
         item = dynamoDbClient.loadItem(item);
@@ -30,7 +30,7 @@ public class AHSTAGameDao {
             return null;
         }
 
-        return ScoreKeeperGame.newInstance(session, item.getGameData());
+        return AHSTAGame.newInstance(session, item.getGameData());
     }
 
     /**
@@ -38,8 +38,8 @@ public class AHSTAGameDao {
      * 
      * @param game
      */
-    public void saveScoreKeeperGame(ScoreKeeperGame game) {
-        ScoreKeeperUserDataItem item = new ScoreKeeperUserDataItem();
+    public void saveAHSTAGame(AHSTAGame game) {
+    	AHSTAGameDataItem item = new AHSTAGameDataItem();
         item.setCustomerId(game.getSession().getUser().getUserId());
         item.setGameData(game.getGameData());
 

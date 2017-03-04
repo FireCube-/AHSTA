@@ -1,3 +1,4 @@
+package textadventure;
 
 public class Connection {
 	String name;

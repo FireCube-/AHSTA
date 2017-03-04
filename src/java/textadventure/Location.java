@@ -1,27 +1,46 @@
+package textadventure;
 import java.util.ArrayList;
 
 public class Location {
 
-	String name;
+	private String name;
 	ArrayList<Connection> connections = new ArrayList<Connection>();
 	
-	String desc;
+	private String desc;
 	ArrayList<Entity> entities = new ArrayList<Entity>();
 	
 	
 	Location(String name){
-		this.name = name;
+		this.setName(name);
 	}
 	
 	Location(String name, ArrayList<Connection> connections){
-		this.name = name;
+		this.setName(name);
 		this.connections = connections;
 	}
 	
 	Location(String name, ArrayList<Connection> connections, String desc){
-		this.name = name;
+		this.setName(name);
 		this.connections = connections;
+		this.setDesc(desc);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+	
+	
 	
 }
