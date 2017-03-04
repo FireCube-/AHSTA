@@ -1,23 +1,23 @@
-Option1Intent pick option one
-Option1Intent choose option one
-Option1Intent option one
-Option1Intent do option one 
-Option1Intent first option
-Option2Intent pick option two
-Option2Intent choose option two
-Option2Intent option two
-Option2Intent do option two 
-Option2Intent second option
-Option3Intent pick option three
-Option3Intent choose option three
-Option3Intent option three
-Option3Intent do option three 
-Option3Intent third option
-Option4Intent pick option four
-Option4Intent choose option four
-Option4Intent option four
-Option4Intent do option four 
-Option4Intent fourth option
+OptionOneIntent pick option one
+OptionOneIntent choose option one
+OptionOneIntent option one
+OptionOneIntent do option one 
+OptionOneIntent first option
+OptionTwoIntent pick option two
+OptionTwoIntent choose option two
+OptionTwoIntent option two
+OptionTwoIntent do option two 
+OptionTwoIntent second option
+OptionThreeIntent pick option three
+OptionThreeIntent choose option three
+OptionThreeIntent option three
+OptionThreeIntent do option three 
+OptionThreeIntent third option
+OptionFourIntent pick option four
+OptionFourIntent choose option four
+OptionFourIntent option four
+OptionFourIntent do option four 
+OptionFourIntent fourth option
 NewGameIntent start new game
 NewGameIntent begin new game
 NewGameIntent new game
