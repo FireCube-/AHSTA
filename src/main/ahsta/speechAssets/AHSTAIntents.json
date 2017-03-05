@@ -6,7 +6,7 @@
         "slots": [
           {
             "name": "Object",
-            "type": "String"
+            "type": "DeviceType"
           }
         ]
       },
@@ -15,7 +15,7 @@
         "slots": [
           {
             "name": "Object",
-            "type":  "String"
+            "type":  "DeviceType"
           }
         ]
       },
@@ -24,7 +24,7 @@
         "slots": [
           {
             "name": "Object",
-            "type":  "String"
+            "type":  "DeviceType"
           }
         ]
       },
@@ -33,7 +33,7 @@
       "slots": [
         {
           "name": "Object",
-          "type":  "String"
+          "type":  "DeviceType"
         }
       ] 
       },
@@ -42,7 +42,7 @@
         "slots": [
           {
             "name": "Object",
-            "type":  "String"
+            "type":  "DeviceType"
           }
         ]
       },
