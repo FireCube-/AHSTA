@@ -86,7 +86,7 @@ public class Game {
 	
 	public boolean newGame() {
 		try {
-			this.location = Parser.parseLocation("/adventurexml/start.xml");
+			this.location = Parser.parseLocation("start.xml");
 			this.inventory = new Inventory();
 			return true;
 		} catch (FileNotFoundException e) {

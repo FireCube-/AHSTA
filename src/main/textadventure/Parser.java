@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -47,8 +48,8 @@ public class Parser {
 		throw new XMLParseException("Invalid Content");
 	}
 	
-	public static Save parseSave(String name) throws FileNotFoundException {
-		FileReader fr = new FileReader("/src/main/adventurexml" + name);
+	public static Save parseSave(String fileName) throws FileNotFoundException {
+		FileReader fr = new FileReader(fileName);
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("save"))
@@ -98,9 +99,9 @@ public class Parser {
 		return new Save(new Location(locName, locConnections, locDesc, locEntities), entities);
 	}
 	
-	public static Location parseLocation(String name) throws FileNotFoundException {
+	public static Location parseLocation(String fileName) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
-		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name);
+		FileReader fr = new FileReader(fileName);
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("location"))

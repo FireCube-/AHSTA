@@ -12,14 +12,12 @@ import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
 import textadventure.Game;
 
-import textadventure.IntentType;
-
-
 public class AHSTAGameManager {
 
     private static final Logger log = LoggerFactory.getLogger(ahsta.AHSTAGameManager.class);
     private Game game;
 
+    
     //placeholder
     public SpeechletResponse getLaunchResponse(LaunchRequest request, Session session) {
         String speechText;
@@ -97,7 +95,7 @@ public class AHSTAGameManager {
         log.info(speechText);
 
         boolean tryNewGame = game.newGame();
-
+        
         if (tryNewGame == true){
             speechText = "New game created. " + game.describe();
         }
@@ -106,8 +104,6 @@ public class AHSTAGameManager {
         }
 
         log.info(speechText);
-
-
 
         return getTellSpeechletResponse(speechText);
 

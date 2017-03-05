@@ -14,14 +14,11 @@ import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
 
 
+
 public class AHSTASpeechlet implements Speechlet {
 
 	private static final Logger log = LoggerFactory.getLogger(ahsta.AHSTASpeechlet.class);
-
-
-	public static void main(String[] args) {
-
-	}
+	
 
 	private AHSTAGameManager ahstaGameManager;
 
