@@ -13,10 +13,6 @@ public class AHSTAGameManager {
 
 	private final AHSTAGameDao ahstaGameDao;
 	
-	public AHSTAGameManager() {
-		ahstaGameDao = null;
-	}
-	
     public AHSTAGameManager(final AmazonDynamoDBClient amazonDynamoDbClient) {
         AHSTADynamoDbClient dynamoDbClient = new AHSTADynamoDbClient(amazonDynamoDbClient);
         ahstaGameDao = new AHSTAGameDao(dynamoDbClient);

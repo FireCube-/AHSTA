@@ -20,7 +20,7 @@ public class AHSTASpeechlet implements Speechlet {
 
 	private static final Logger log = LoggerFactory.getLogger(AHSTASpeechlet.class);
 	
-    //private AmazonDynamoDBClient amazonDynamoDBClient;
+    private AmazonDynamoDBClient amazonDynamoDBClient;
 
 	public static void main(String[] args) {
 		
@@ -31,7 +31,7 @@ public class AHSTASpeechlet implements Speechlet {
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-		ahstaGameManager = new AHSTAGameManager();
+
 		initializeComponents();
 	}
 
@@ -79,10 +79,10 @@ public class AHSTASpeechlet implements Speechlet {
 	}
 	
 	public void initializeComponents() {
-        //if (amazonDynamoDBClient == null) {
-            //amazonDynamoDBClient = new AmazonDynamoDBClient();
-            //ahstaGameManager = new AHSTAGameManager();//(amazonDynamoDBClient);
-        //}
+        if (amazonDynamoDBClient == null) {
+            amazonDynamoDBClient = new AmazonDynamoDBClient();
+            ahstaGameManager = new AHSTAGameManager(amazonDynamoDBClient);
+        }
 	}
 
 }
