@@ -1,0 +1,14 @@
+<location>
+  <name>The Captain's Quaters</name>
+  <desc>You realize, that that the smell is the rotting corpse of the captain, feasted over by Elena herself!</desc>
+  <entity>
+    <name>Elena the Soulscreecher</name>
+    <desc>The queen of all spirits earily approaches you in the twilight of the blood moon.</desc>
+    <property>killable</property>
+  </entity>
+  <connection>
+    <name>Massive yacht</name>
+    <desc>You run towards the yatch, that daunts you with it is massive siez</desc>
+    <destination>yacht_entry</destination>
+  </connection>
+</location>

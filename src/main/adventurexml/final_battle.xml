@@ -1,0 +1,9 @@
+<location>
+  <name>The Captain's Quaters</name>
+  <desc>You realize, that that the smell is the rotting corpse of the captain, feasted over by Elena herself!</desc>
+  <entity>
+    <name>Elena the Soulscreecher</name>
+    <desc>You grab the massive yacht model, that the eccentric billionaire gave you and use it to banish the Soulscreecher.</desc>
+    <property>killable</property>
+  </entity>
+</location>

@@ -1,8 +1,0 @@
-<room>
-	<name>Xen</name>
-	<desc>Gordon Freeman is fighting space bugs and listening to Alter Bridge</desc>
-	<entity>
-		<name>Gordon Freeman</name>
-		<property>Badass</property>
-	</entity>
-</room>

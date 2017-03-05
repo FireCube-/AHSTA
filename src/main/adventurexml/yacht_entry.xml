@@ -1,0 +1,22 @@
+<location>
+  <name>Massive yacht</name>
+  <desc>You climb onto the deck. Even though you are safe for the moment, you can't help feel a higher presence in the near.</desc>
+  <entity>
+    <name>Jayden</name>
+    <desc>An eccentric billionaire</desc>
+  </entity>
+  <entity>
+    <name>Aiden</name>
+    <desc>An other eccentric billionair</desc>
+    </entity>
+  <entity>
+    <name>Braiden</name>
+    <desc>The richest and most eccentric billionaire looks anxiously at you. He suddenly removes his cape to reveal the secret to defeating Elena.</desc>
+    <property>interactable</property>
+  </entity>
+  <connection>
+    <name>Massive Yacht, the captain's quaters</name>
+    <desc>A foul stench oozes from the cabins</desc>
+    <destination>final_battle</destination>
+  </connection>
+</location>
