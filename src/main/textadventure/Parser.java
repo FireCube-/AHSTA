@@ -45,7 +45,7 @@ public class Parser {
 	}
 	
 	public static Save parseSave(String name) throws FileNotFoundException {
-		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
+		FileReader fr = new FileReader("/src/main/adventurexml" + name + ".xml");
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("save"))
