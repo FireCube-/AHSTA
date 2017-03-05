@@ -34,5 +34,9 @@ public class Entity {
 	public boolean hasProperty(String prop){
 		return this.properties.contains(prop);
 	}
+	
+	public HashSet<String> getProperties(){
+		return this.properties;
+	}
 
 }

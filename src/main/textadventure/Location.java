@@ -43,6 +43,9 @@ public class Location {
 		}
 		throw new InvalidConnectionException("Invalid connection search");
 	}
+	public ArrayList<Connection> getConnections() {
+		return connections;
+	}
 
 	public Entity getEntity(String name) throws InvalidEntityException {
 		for (Entity e : this.entities) {
@@ -51,12 +54,15 @@ public class Location {
 		}
 		throw new InvalidEntityException("Invalid entity search");
 	}
-	
+
 	public boolean removeEntity(Entity e) {
 		return this.entities.remove(e);
 	}
 	
-	//Dont use
+	public ArrayList<Entity> getEntities() {
+		return entities;
+	}
+
 	public String View(){
 		String connectionsDesc = "There is:";
 		for(int x = 0 ; x < connections.size() ; x++){

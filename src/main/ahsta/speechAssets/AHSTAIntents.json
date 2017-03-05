@@ -1,10 +1,52 @@
 {
   "intents": 
     [
-    { "intent": "OptionOneIntent" },
-    { "intent": "OptionTwoIntent" },
-    { "intent": "OptionThreeIntent" },
-    { "intent": "OptionFourIntent" },
+       {
+        "intent": "MoveIntent",
+        "slots": [
+          {
+            "name": "Object",
+            "type": "String"
+          }
+        ]
+      },
+      {
+        "intent": "PickUpIntent",
+        "slots": [
+          {
+            "name": "Object",
+            "type":  "String"
+          }
+        ]
+      },
+   {
+        "intent": "AttackIntent",
+        "slots": [
+          {
+            "name": "Object",
+            "type":  "String"
+          }
+        ]
+      },
+    {
+        "intent": "LookIntent",
+      "slots": [
+        {
+          "name": "Object",
+          "type":  "String"
+        }
+      ] 
+      },
+    {
+        "intent": "UseIntent",
+        "slots": [
+          {
+            "name": "Object",
+            "type":  "String"
+          }
+        ]
+      },
+     
     { "intent": "NewGameIntent" },
       { "intent": "AMAZON.StopIntent" }
     

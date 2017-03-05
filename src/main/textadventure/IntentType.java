@@ -15,7 +15,7 @@ public class IntentType {
 
     public String object;
 
-public Action action;
+    public Action action;
 
 
 }

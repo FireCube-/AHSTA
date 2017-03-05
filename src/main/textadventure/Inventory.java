@@ -41,6 +41,16 @@ public class Inventory {
 			}
 			return ret + " in your inventory.";
 		}
+	public int size(){
+		return items.size();
+	}
+	
+	public ArrayList<Entity> getEntities(){
+		return items;
+	}
+	
+	public Entity get(int x){
+		return items.get(x);
 	}
 
 }
