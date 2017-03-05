@@ -11,8 +11,10 @@ public class Parser {
 				in = (char) br.read();
 			}
 			String tag = "";
+			in = (char) br.read();
 			while (in != '>') {
 				tag += in;
+				in = (char) br.read();
 			}
 			return tag;
 		} catch (IOException e) {
@@ -30,6 +32,7 @@ public class Parser {
 			while (in != '<') {
 				content += in;
 				br.mark(1);
+				in = (char) br.read();
 			}
 			br.reset();
 			return content;
