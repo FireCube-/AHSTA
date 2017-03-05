@@ -66,7 +66,7 @@ public class AHSTASpeechlet implements Speechlet {
 			return ahstaGameManager.getExitIntentResponse(intent, session);
 
 		} else {
-			throw new IllegalArgumentException("Unrecognized intent: " + intent.getName());
+			throw new IllegalArgumentException("I am sorry, you cannot perform that action.");
 		}
 	}
 
