@@ -26,5 +26,17 @@ public class Inventory {
 		}
 		return false;
 	}
+	
+	public int size(){
+		return items.size();
+	}
+	
+	public ArrayList<Entity> getEntities(){
+		return items;
+	}
+	
+	public Entity get(int x){
+		return items.get(x);
+	}
 
 }
