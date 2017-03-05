@@ -11,19 +11,10 @@ import com.amazonaws.services.dynamodbv2.*;
 
 public class AHSTAGameManager {
 
-	private final AHSTAGameDao ahstaGameDao;
-	
-    public AHSTAGameManager(final AmazonDynamoDBClient amazonDynamoDbClient) {
-        AHSTADynamoDbClient dynamoDbClient = new AHSTADynamoDbClient(amazonDynamoDbClient);
-        ahstaGameDao = new AHSTAGameDao(dynamoDbClient);
-    }
     //placeholder
     public SpeechletResponse getLaunchResponse(LaunchRequest request, Session session) {
         String speechText;
-        //AHSTAGame game = ahstaGameDao.getAHSTAGame(session);
-
-        
-        
+       
         speechText = "It is almost harvesting season!";
 
         return getTellSpeechletResponse(speechText);
@@ -42,14 +33,6 @@ public class AHSTAGameManager {
         return null;
     }
     public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
-        AHSTAGame game = ahstaGameDao.getAHSTAGame(session);
-
-        if (game == null) {
-            return getTellSpeechletResponse("Hello! New game started! TEST TEST TEST");
-        }
-
-        ahstaGameDao.saveAHSTAGame(game);
-
         String speechText = "New game started with!";
 
        
