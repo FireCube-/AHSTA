@@ -23,7 +23,7 @@ public class Parser {
 			System.err.println(e.getMessage());
 			System.err.println(e.getStackTrace());
 		}
-		return "";
+		throw new XMLParseException();
 	}
 
 	public static String getContent(BufferedReader br) {
@@ -41,10 +41,10 @@ public class Parser {
 			System.err.println(e.getMessage());
 			System.err.println(e.getStackTrace());
 		}
-		return "";
+		throw new XMLParseException("Invalid Content");
 	}
 	
-	Location parseLocation(String name) throws FileNotFoundException {
+	public Location parseLocation(String name) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
 		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
 		BufferedReader br = new BufferedReader(fr);

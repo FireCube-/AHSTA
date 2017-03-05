@@ -1,6 +1,6 @@
 package textadventure;
 
-public class XMLParseException extends RuntimeException{
+public class XMLParseException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

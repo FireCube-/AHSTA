@@ -18,7 +18,6 @@ public class Game {
 		option4Type = new IntentType();
 	}
 
-
 	boolean doAction(String action) {
 		//Does the action specified as the parameter
 		return true;
