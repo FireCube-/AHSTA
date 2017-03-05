@@ -33,7 +33,7 @@ public class AHSTAGameManager {
         return null;
     }
     public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
-        String speechText = "New game started with!";
+        String speechText = "New game started!";
 
        
         return getTellSpeechletResponse(speechText);

@@ -7,7 +7,6 @@
 		<property>breaks</property>
 	</entity>
 	<connection>
-		<direction>north</direction>
 		<name>Door</name>
 		<desc>A boring portal</desc>
 		<destination>room2</destination>
