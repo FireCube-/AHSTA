@@ -43,6 +43,9 @@ public class Location {
 		}
 		throw new InvalidConnectionException("Invalid connection search");
 	}
+	public ArrayList<Connection> getConnections() {
+		return connections;
+	}
 
 	public Entity getEntity(String name) throws InvalidEntityException {
 		for (Entity e : this.entities) {
@@ -50,6 +53,10 @@ public class Location {
 				return e;
 		}
 		throw new InvalidEntityException("Invalid entity search");
+	}
+	
+	public ArrayList<Entity> getEntities() {
+		return entities;
 	}
 	
 	//Someone else can clean this up
