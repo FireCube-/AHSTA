@@ -21,7 +21,7 @@ public class Game {
 
 	boolean loadLocation(String name) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
-		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
+		FileReader fr = new FileReader("../../" + name + ".xml");
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("location"))
@@ -39,7 +39,7 @@ public class Game {
 						return false;
 					break;
 				case "desc":
-					locDesc = Parser.getContent(br);
+					locName = Parser.getContent(br);
 					if (!Parser.getTag(br).equals("/desc"))
 						return false;
 					break;
@@ -120,9 +120,5 @@ public class Game {
 		return new Connection(cName, cDestination, cDesc);
 	}
 
-	void printLocation() {
-		System.out.println("name: " + this.location.getName());
-		System.out.println("desc: " + this.location.getDesc());
-	}
 
 }
