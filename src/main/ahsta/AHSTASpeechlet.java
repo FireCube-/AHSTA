@@ -20,12 +20,12 @@ public class AHSTASpeechlet implements Speechlet {
 	private static final Logger log = LoggerFactory.getLogger(ahsta.AHSTASpeechlet.class);
 	
 
-	private AHSTAGameManager ahstaGameManager;
+	private AHSTAGameManager ahstaGameManager = new AHSTAGameManager();
 
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-		ahstaGameManager = new AHSTAGameManager();
+		//ahstaGameManager = new AHSTAGameManager();
 	}
 
 	@Override

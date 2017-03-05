@@ -30,7 +30,7 @@ public class AHSTAGameManager {
     public SpeechletResponse getMoveIntentResponse (Intent intent, Session session){
         String speechText = new String();
         String action = "move";
-        String object = intent.getSlot("Object").getValue().toString();
+        String object = intent.getSlot("Object").getValue();
         try {
             speechText = game.doAction(action, object);
         }

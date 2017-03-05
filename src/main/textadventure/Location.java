@@ -38,10 +38,10 @@ public class Location {
 
 	public Connection getConnection(String name) throws InvalidConnectionException {
 		for (Connection c : this.connections) {
-			if (c.getName() == name)
+			if (c.getDestination().equals(name))
 				return c;
 		}
-		throw new InvalidConnectionException("Invalid connection search");
+		throw new InvalidConnectionException("Invalid connection search: \"" + name + "\"");
 	}
 	public ArrayList<Connection> getConnections() {
 		return connections;
