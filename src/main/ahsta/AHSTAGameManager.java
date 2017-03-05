@@ -34,7 +34,7 @@ public class AHSTAGameManager {
 
 
 
-        murrayFunction(game.option1Type, newOption1, newOption2, newOption3, newOption4, speechText);
+        //game.doAction(game.option1Type, newOption1, newOption2, newOption3, newOption4, speechText);
 
         game.option1Type = newOption1;
         game.option2Type = newOption2;
@@ -45,17 +45,17 @@ public class AHSTAGameManager {
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
-        String speechText = murrayFunction(game.option2Type.action, game.option2Type.object);
+        String speechText = game.doAction(game.option2Type.action, game.option2Type.object);
 
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
-        String speechText = murrayFunction(game.option3Type.action, game.option3Type.object);
+        String speechText = game.doAction(game.option3Type.action, game.option3Type.object);
 
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
-        String speechText = murrayFunction(game.option4Type.action, game.option4Type.object);
+        String speechText = game.doAction(game.option4Type.action, game.option4Type.object);
 
         return getTellSpeechletResponse(speechText);
     }

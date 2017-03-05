@@ -44,6 +44,57 @@ public class Parser {
 		throw new XMLParseException("Invalid Content");
 	}
 	
+	public Save parseSave(String name) throws FileNotFoundException {
+		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
+		BufferedReader br = new BufferedReader(fr);
+		String check = Parser.getTag(br);
+		if (!check.equals("save"))
+			throw new XMLParseException("Invalid save tag");
+		String tag = Parser.getTag(br);
+		String locName = "";
+		String locDesc = "";
+		ArrayList<Connection> locConnections = new ArrayList<>();
+		ArrayList<Entity> locEntities = new ArrayList<>();
+		ArrayList<Entity> entities = new ArrayList<>();
+		while (!tag.equals("/save")) {
+			switch(tag) {
+				case "location":
+					tag = Parser.getTag(br);
+					while (!tag.equals("/location")) {
+						switch(tag) {
+							case "name":
+								locName = Parser.getContent(br);
+								if (!Parser.getTag(br).equals("/name"))
+									throw new XMLParseException("Invalid name tag");
+								break;
+							case "desc":
+								locDesc = Parser.getContent(br);
+								if (!Parser.getTag(br).equals("/desc"))
+									throw new XMLParseException("Invalid desc tag");
+								break;
+							case "entity":
+								locEntities.add(this.parseEntity(br));
+								break;
+							case "connection":
+								locConnections.add(this.parseConnection(br));
+								break;
+							default:
+								throw new XMLParseException("Invalid XML");
+						}
+						tag = Parser.getTag(br);
+					}
+					break;
+				case "entity":
+					entities.add(this.parseEntity(br));
+					break;
+				default:
+					throw new XMLParseException("Invalid XML");
+			}
+			tag = Parser.getTag(br);
+		}
+		return new Save(new Location(locName, locConnections, locDesc, locEntities), entities);
+	}
+	
 	public Location parseLocation(String name) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
 		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");

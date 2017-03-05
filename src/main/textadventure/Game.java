@@ -17,10 +17,10 @@ public class Game {
 		option3Type = new IntentType();
 		option4Type = new IntentType();
 	}
-
-	boolean doAction(String action) {
+	
+	public String doAction(IntentType.Action action, String object) {
 		//Does the action specified as the parameter
-		return true;
+		return "Hello, world!";
 	}
 
 }

@@ -56,13 +56,13 @@ public class Location {
 	public String View(){
 		String connectionsDesc = "There is:";
 		for(int x = 0 ; x < connections.size() ; x++){
-			connectionsDesc = connectionsDesc + ", a " + connections.get(x).name;
+			connectionsDesc = connectionsDesc + ", a " + connections.get(x).getName();
 					}
 		connectionsDesc = connectionsDesc.substring(0,8) + connectionsDesc.substring(10,connectionsDesc.length()) + " in the " + this.name + ".\n";
 
 		String entitiesDesc = "There is:";
 		for(int x = 0 ; x < connections.size() ; x++){
-			entitiesDesc = entitiesDesc + ", a " + connections.get(x).name;
+			entitiesDesc = entitiesDesc + ", a " + connections.get(x).getName();
 					}
 		entitiesDesc = entitiesDesc.substring(0,8) + entitiesDesc.substring(10,entitiesDesc.length()) + " in the " + this.name + ".\n";
 
