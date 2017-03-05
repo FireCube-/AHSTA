@@ -1,4 +1,5 @@
 package textadventure;
+import java.util.Set;
 import java.util.HashSet;
 
 public class Entity {
@@ -6,7 +7,7 @@ public class Entity {
 	String name;
 	String desc;
 	
-	HashSet<String> properties = new HashSet<String>(0);
+	HashSet<String> properties = new HashSet<>();
 	
 	String state;
 	
@@ -19,54 +20,28 @@ public class Entity {
 		this.desc = desc;
 	}
 
-	Entity(String name, String desc, String state){
+	Entity(String name, String desc, String state, Set<String> properties){
 		this.name  = name;
 		this.desc  = desc;
-		this.state = state;
+		this.properties =  new HashSet<>(properties);		
 	}
 
-	Entity(String name, String desc, String state, String[] properties){
-		this.name  = name;
-		this.desc  = desc;
-		this.state = state;
-		
-		for (String prop : properties){
-			this.properties.add(prop);
-		}
-		
-	}
-
-	Entity(String name, String desc, String[] properties){
+	Entity(String name, String desc, Set<String> properties){
 		this.name = name;
 		this.desc = desc;
-		
-		for (String prop : properties){
-			this.properties.add(prop);
-		}
-		
+		this.properties =  new HashSet<>(properties);
 	}
 	
 	String getName(){
 		return name;
 	}
 	
-	String view(){
+	String getDesc(){
 		return desc;
 	}
 	
 	boolean hasProperty(String prop){
-		if (properties.contains(prop))
-			return true;
-		return false;
+		return this.properties.contains(prop);
 	}
-	
-	boolean inState(String state){
-		if (state.equals(this.state))
-			return true;
-		return false;
-	}
-	
-	void changeState(String state){
-		this.state = state;
-	}
+
 }
