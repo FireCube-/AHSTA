@@ -43,6 +43,7 @@ public class Inventory {
 		}
 	}
 	
+	
 	public int size(){
 		return items.size();
 	}
