@@ -1,0 +1,13 @@
+<location>
+	<name>test room</name>
+	<desc>a testing location</desc>
+	<entity>
+		<name>pen</name>
+		<desc>a boring old pen</desc>
+	</entity>
+	<connection>
+		<name>Door</name>
+		<desc>a brand new door</desc>
+		<destination>the other side</destination>
+	</connection>
+</location>
