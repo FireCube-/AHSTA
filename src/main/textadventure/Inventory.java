@@ -41,6 +41,7 @@ public class Inventory {
 			}
 			return ret + " in your inventory.";
 		}
+	}
 	public int size(){
 		return items.size();
 	}
