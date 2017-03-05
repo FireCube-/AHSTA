@@ -1,26 +1,30 @@
 package textadventure;
 
 public class Connection {
-	String name;
-	String destination;
+
+	private String name;
+	private String destination;
+	private String desc;
 	
-	String desc;
-	
-	Connection(String name, String destination){
+	public Connection(String name, String destination){
 		this.name = name;
 		this.destination = destination;
 	}
 	
-	Connection(String name, String destination, String desc){
-		this.name = name;
-		this.destination = destination;
+	public Connection(String name, String destination, String desc){
+		this(name, destination);
 		this.desc = desc;
 	}
 	
-	String ToString(){
-		return name;
+	public String getName() {
+		return this.name;
 	}
-	String Destination(){
-		return desc;
+	
+	public String getDesc() {
+		return this.desc;
+	}
+	
+	public String getDestination() {
+		return this.destination;
 	}
 }

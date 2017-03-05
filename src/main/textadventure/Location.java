@@ -1,78 +1,73 @@
 package textadventure;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Location {
-	
-	public static void main(String[] args){
-		ArrayList<Connection> cons = new ArrayList<Connection>();
-		cons.add(new Connection("door","north"));
-		cons.add(new Connection("gate","south"));
-		ArrayList<Entity> ents = new ArrayList<Entity>();
-		ents.add(new Entity("grandfather clock"));
-		ents.add(new Entity("chest full of gold"));
-		Location temp = new Location("room",cons,"This is a bleeeeak room ful of air, nothing and loneliness.",ents);
-		System.out.println(temp.View());
-	}
 
 	private String name;
-	ArrayList<Connection> connections = new ArrayList<Connection>();
-	
 	private String desc;
-	ArrayList<Entity> entities = new ArrayList<Entity>();
+	private ArrayList<Connection> connections;
+	private ArrayList<Entity> entities;
 	
-	Location(String name){
-		this.setName(name);
+	public Location(String name){
+		this.name = name;
 	}
 	
-	Location(String name, ArrayList<Connection> connections){
-		this.setName(name);
-		this.connections = connections;
+	public Location(String name, Collection<Connection> connections){
+		this(name);
+		this.connections = new ArrayList<>(connections);
 	}
 	
-	Location(String name, ArrayList<Connection> connections, String desc){
-		this.setName(name);
-		this.connections = connections;
-		this.setDesc(desc);
+	public Location(String name, Collection<Connection> connections, String desc){
+		this(name, connections);
+		this.desc =  desc;
 	}
 	
-	Location(String name, ArrayList<Connection> connections, String desc, ArrayList<Entity> entities){
-		this.setName(name);
-		this.connections = connections;
-		this.setDesc(desc);
-		this.entities = entities;
+	public Location(String name, Collection<Connection> connections, String desc, ArrayList<Entity> entities){
+		this(name, connections, desc);
+		this.entities = new ArrayList<>(entities);
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getDesc() {
 		return desc;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public Connection getConnection(String name) throws InvalidConnectionException {
+		for (Connection c : this.connections) {
+			if (c.getName() == name)
+				return c;
+		}
+		throw new InvalidConnectionException("Invalid connection search");
 	}
+
+	public Entity getEntity(String name) throws InvalidEntityException {
+		for (Entity e : this.entities) {
+			if (e.getName() == name)
+				return e;
+		}
+		throw new InvalidEntityException("Invalid entity search");
+	}
+	
+	//Someone else can clean this up
 	public String View(){
 		String connectionsDesc = "There is:";
 		for(int x = 0 ; x < connections.size() ; x++){
-			connectionsDesc = connectionsDesc + ", a " + connections.get(x).name;
+			connectionsDesc = connectionsDesc + ", a " + connections.get(x).getName();
 					}
 		connectionsDesc = connectionsDesc.substring(0,8) + connectionsDesc.substring(10,connectionsDesc.length()) + " in the " + this.name + ".\n";
 
 		String entitiesDesc = "There is:";
 		for(int x = 0 ; x < connections.size() ; x++){
-			entitiesDesc = entitiesDesc + ", a " + connections.get(x).name;
+			entitiesDesc = entitiesDesc + ", a " + connections.get(x).getName();
 					}
 		entitiesDesc = entitiesDesc.substring(0,8) + entitiesDesc.substring(10,entitiesDesc.length()) + " in the " + this.name + ".\n";
 
 		
 		return this.desc + "\n" + connectionsDesc + entitiesDesc;
-		
 	}
 	
 	

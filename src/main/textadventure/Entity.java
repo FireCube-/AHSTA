@@ -1,72 +1,38 @@
 package textadventure;
+import java.util.Collection;
 import java.util.HashSet;
 
 public class Entity {
 	
-	String name;
-	String desc;
+	private String name;
+	private String desc;
+	private HashSet<String> properties = new HashSet<>();
 	
-	HashSet<String> properties = new HashSet<String>(0);
-	
-	String state;
-	
-	Entity(String name){
+	public Entity(String name){
 		this.name = name;
 	}
 
-	Entity(String name, String desc){
+	public Entity(String name, String desc){
 		this.name = name;
 		this.desc = desc;
 	}
 
-	Entity(String name, String desc, String state){
+	public Entity(String name, String desc, Collection<String> properties){
 		this.name  = name;
 		this.desc  = desc;
-		this.state = state;
-	}
-
-	Entity(String name, String desc, String state, String[] properties){
-		this.name  = name;
-		this.desc  = desc;
-		this.state = state;
-		
-		for (String prop : properties){
-			this.properties.add(prop);
-		}
-		
-	}
-
-	Entity(String name, String desc, String[] properties){
-		this.name = name;
-		this.desc = desc;
-		
-		for (String prop : properties){
-			this.properties.add(prop);
-		}
-		
+		this.properties =  new HashSet<>(properties);		
 	}
 	
-	String getName(){
+	public String getName(){
 		return name;
 	}
 	
-	String view(){
+	public String getDesc(){
 		return desc;
 	}
 	
-	boolean hasProperty(String prop){
-		if (properties.contains(prop))
-			return true;
-		return false;
+	public boolean hasProperty(String prop){
+		return this.properties.contains(prop);
 	}
-	
-	boolean inState(String state){
-		if (state.equals(this.state))
-			return true;
-		return false;
-	}
-	
-	void changeState(String state){
-		this.state = state;
-	}
+
 }

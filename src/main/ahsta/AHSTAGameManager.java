@@ -7,34 +7,62 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
-import com.amazonaws.services.dynamodbv2.*;
+import textadventure.Game;
+import textadventure.IntentType;
+
 
 public class AHSTAGameManager {
+
+    private Game game;
 
     //placeholder
     public SpeechletResponse getLaunchResponse(LaunchRequest request, Session session) {
         String speechText;
-       
+
         speechText = "It is almost harvesting season!";
 
         return getTellSpeechletResponse(speechText);
     }
   
     public SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
-        return null;
+
+        String speechText = new String();
+        IntentType newOption1 = new IntentType();
+        IntentType newOption2 = new IntentType();
+        IntentType newOption3 = new IntentType();
+        IntentType newOption4 = new IntentType();
+
+
+
+        //game.doAction(game.option1Type, newOption1, newOption2, newOption3, newOption4, speechText);
+
+        game.option1Type = newOption1;
+        game.option2Type = newOption2;
+        game.option3Type = newOption3;
+        game.option4Type = newOption4;
+
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
-        return null;
+        String speechText = game.doAction(game.option2Type.action, game.option2Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
-        return null;
+        String speechText = game.doAction(game.option3Type.action, game.option3Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
-        return null;
+        String speechText = game.doAction(game.option4Type.action, game.option4Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
         String speechText = "New game started!";
 
+        game = new Game();
        
         return getTellSpeechletResponse(speechText);
     }

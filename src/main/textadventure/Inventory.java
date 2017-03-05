@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Inventory {
 
-	private ArrayList<Item> items;
+	private ArrayList<Entity> items;
 
 	public boolean addItem(String type) {
-		return items.add(new Item(type));
+		return items.add(new Entity(type));
 	}
 
 	public boolean removeItem(String type) {
