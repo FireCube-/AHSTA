@@ -8,6 +8,7 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
 import textadventure.Game;
+import textadventure.IntentType;
 
 
 public class AHSTAGameManager {
@@ -25,7 +26,15 @@ public class AHSTAGameManager {
   
     public SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
 
-        String speechText = murrayFunction(game.option1Type.action, game.option1Type.object);
+        String speechText = new String();
+        IntentType newOption1 = new IntentType();
+        IntentType newOption2 = new IntentType();
+        IntentType newOption3 = new IntentType();
+        IntentType newOption4 = new IntentType();
+
+
+
+        murrayFunction(game.option1Type, newOption1, newOption2, newOption3, newOption4, speechText);
 
         return getTellSpeechletResponse(speechText);
     }
