@@ -4,7 +4,7 @@
 	<entity>
 		<name>bed</name>
 		<desc>A large king sized bed, decorated with an ornate bedcloth.</desc>
-		<property>soft<prop>
+		<property>soft</property>
 	</entity>
 	<connection>
 		<name>door</name>

@@ -35,7 +35,10 @@ public class AHSTAGameManager {
             speechText = game.doAction(action, object);
         }
         catch (textadventure.InvalidActionException e){
-       speechText = "You are not able to perform this action";
+        	speechText = "You are not able to perform this action";
+        }
+        catch (NullPointerException ex) {
+        	ex.printStackTrace();
         }
         return getTellSpeechletResponse(speechText);
     }

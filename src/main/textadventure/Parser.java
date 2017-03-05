@@ -49,7 +49,7 @@ public class Parser {
 	}
 	
 	public static Save parseSave(String fileName) throws FileNotFoundException {
-		FileReader fr = new FileReader(fileName);
+		FileReader fr = new FileReader(fileName  + ".xml");
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("save"))
@@ -101,7 +101,7 @@ public class Parser {
 	
 	public static Location parseLocation(String fileName) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
-		FileReader fr = new FileReader(fileName);
+		FileReader fr = new FileReader(fileName + ".xml");
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("location"))

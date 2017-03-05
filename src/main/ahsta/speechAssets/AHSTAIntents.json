@@ -6,7 +6,7 @@
         "slots": [
           {
             "name": "Object",
-            "type": "AMAZON.DeviceType"
+            "type": "LIST_OF_LOCS"
           }
         ]
       },
@@ -15,7 +15,7 @@
         "slots": [
           {
             "name": "Object",
-            "type":  "AMAZON.DeviceType"
+            "type":  "LIST_OF_LOCS"
           }
         ]
       },
@@ -24,7 +24,7 @@
         "slots": [
           {
             "name": "Object",
-            "type":  "AMAZON.DeviceType"
+            "type":  "LIST_OF_LOCS"
           }
         ]
       },
@@ -33,7 +33,7 @@
       "slots": [
         {
           "name": "Object",
-          "type":  "AMAZON.DeviceType"
+          "type":  "LIST_OF_LOCS"
         }
       ] 
       },
@@ -42,7 +42,7 @@
         "slots": [
           {
             "name": "Object",
-            "type":  "AMAZON.DeviceType"
+            "type":  "LIST_OF_LOCS"
           }
         ]
       },
