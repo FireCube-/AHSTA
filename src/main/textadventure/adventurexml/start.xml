@@ -1,14 +1,14 @@
 <location>
-  <name>Cemetery</name>
-  <desc>Ghastly figures emerge through the mist to feast on your mortal soul!</desc>
-  <entity>
-    <name>Elena the Soulscreecher</name>
-    <desc>The queen of all spirits earily approaches you in the twilight of the blood moon.</desc>
-    <property>killable</property>
-  </entity>
-  <connection>
-    <name>Massive yacht</name>
-    <desc>You run towards the yatch, that daunts you with it is massive siez</desc>
-    <destination>yacht_entry</destination>
-  </connection>
+	<name>start</name>
+	<desc>A large bedroom, The biggest in the house. It is dominated by the king sized bed.</desc>
+	<entity>
+		<name>bed</name>
+		<desc>A large king sized bed, decorated with an ornate bedcloth.</desc>
+		<property>soft<prop>
+	</entity>
+	<connection>
+		<name>door</name>
+		<desc>A white door with a bronze handle.</desc>
+		<destination>Kitchen</destination>
+	</connection>
 </location>

@@ -1,0 +1,15 @@
+<location>
+	<name>LivingRoom</name>
+	<desc>A wide room with couches and a table.</desc>
+	<entity>
+		<name>sword</name>
+		<desc>An unnecessarily large sword, looks very clumsy. Try not to hurt yourself with it.</desc>
+		<property>pickupable<prop>
+	</entity>
+	<connection>
+		<name>door</name>
+		<desc>A blue door with a metal handle.</desc>
+		<destination>Kitchen</destination>
+	</connection>
+</location>
+
