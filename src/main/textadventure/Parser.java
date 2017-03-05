@@ -15,8 +15,10 @@ public class Parser {
 				in = (char) br.read();
 			}
 			String tag = "";
+			in = (char) br.read();
 			while (in != '>') {
 				tag += in;
+				in = (char) br.read();
 			}
 			return tag;
 		} catch (IOException e) {
@@ -34,6 +36,7 @@ public class Parser {
 			while (in != '<') {
 				content += in;
 				br.mark(1);
+				in = (char) br.read();
 			}
 			br.reset();
 			return content;
@@ -45,7 +48,7 @@ public class Parser {
 	}
 	
 	public static Save parseSave(String name) throws FileNotFoundException {
-		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
+		FileReader fr = new FileReader("/src/main/adventurexml" + name);
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("save"))
@@ -97,7 +100,7 @@ public class Parser {
 	
 	public static Location parseLocation(String name) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
-		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
+		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name);
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
 		if (!check.equals("location"))

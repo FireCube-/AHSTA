@@ -17,7 +17,7 @@ public class Save {
 	private String file;
 
 	public static void main(String[] args){
-		
+	
 		ArrayList<Connection> cons = new ArrayList<Connection>(3);
 		cons.add(new Connection("door","LivingRoom","A blue door with a metal doorknob."));
 	 	cons.add(new Connection("window","Garden","A glass window with white borders, very classic."));

@@ -1,0 +1,19 @@
+﻿<Location>
+  <name>OutsideHouse</name>
+  <desc>You are standing in front of a brown house. The front door is closed.</desc>
+  <entity>
+    <name>Door</name>
+    <desc>The door looks old and worn</desc>
+    <property>attackable</property>
+  
+  </entity>
+  <connection>
+    <name>Knock down door</name>
+    <desc>You knock down the door! Inside it is dark and gloomy.</desc>
+    <destination>OutsideHouseBrokenDoor</destination>
+  
+  </connection>
+
+
+
+</Location>

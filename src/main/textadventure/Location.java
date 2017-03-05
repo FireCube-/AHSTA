@@ -81,7 +81,7 @@ public class Location {
 	}
 	
 	public String describe() {
-		return "You are in a " + this.location.getName() + ". " + this.location.getDesc() + ".";
+		return "You are in a " + this.getName() + ". " + this.getDesc() + ".";
 	}
 	
 }

@@ -1,5 +1,8 @@
 package ahsta;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
@@ -8,11 +11,13 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
 import textadventure.Game;
+
 import textadventure.IntentType;
 
 
 public class AHSTAGameManager {
 
+    private static final Logger log = LoggerFactory.getLogger(ahsta.AHSTAGameManager.class);
     private Game game;
 
     //placeholder
@@ -26,27 +31,62 @@ public class AHSTAGameManager {
 
     public SpeechletResponse getMoveIntentResponse (Intent intent, Session session){
         String speechText = new String();
-        speechText = game.doAction("move", intent.getSlot("Object").getValue().toString());
+        String action = "move";
+        String object = intent.getSlot("Object").getValue().toString();
+        try {
+            speechText = game.doAction(action, object);
+        }
+        catch (textadventure.InvalidActionException e){
+       speechText = "You are not able to perform this action";
+        }
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getPickUpIntentResponse (Intent intent, Session session){
         String speechText = new String();
-        speechText = game.doAction("pickup", intent.getSlot("Object").getValue().toString());
+        String action = "pickup";
+        String object = intent.getSlot("Object").getValue().toString();
+        try {
+            speechText = game.doAction(action, object);
+        }
+        catch (textadventure.InvalidActionException e){
+            speechText = "You are not able to perform this action";
+        }
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getAttackIntentResponse (Intent intent, Session session){
         String speechText = new String();
-        speechText = game.doAction("attack", intent.getSlot("Object").getValue().toString());
+        String action = "attack";
+        String object = intent.getSlot("Object").getValue().toString();
+        try {
+            speechText = game.doAction(action, object);
+        }
+        catch (textadventure.InvalidActionException e){
+            speechText = "You are not able to perform this action";
+        }
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getUseIntentResponse (Intent intent, Session session){
         String speechText = new String();
-        speechText = game.doAction("use", intent.getSlot("Object").getValue().toString());
+        String action = "use";
+        String object = intent.getSlot("Object").getValue().toString();
+        try {
+            speechText = game.doAction(action, object);
+        }
+        catch (textadventure.InvalidActionException e){
+            speechText = "You are not able to perform this action";
+        }
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getLookIntentResponse (Intent intent, Session session){
         String speechText = new String();
-        speechText = game.doAction("look", intent.getSlot("Object").getValue().toString());
+        String action = "look";
+        String object = intent.getSlot("Object").getValue().toString();
+        try {
+            speechText = game.doAction(action, object);
+        }
+        catch (textadventure.InvalidActionException e){
+            speechText = "You are not able to perform this action";
+        }
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
@@ -54,7 +94,23 @@ public class AHSTAGameManager {
 
         game = new Game();
 
+        log.info(speechText);
+
+        boolean tryNewGame = game.newGame();
+
+        if (tryNewGame == true){
+            speechText = "New game created. " + game.describe();
+        }
+        else{
+            speechText = "New game was not created";
+        }
+
+        log.info(speechText);
+
+
+
         return getTellSpeechletResponse(speechText);
+
     }
     public SpeechletResponse getExitIntentResponse (Intent intent, Session session){
         return null;

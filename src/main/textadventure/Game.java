@@ -24,26 +24,21 @@ public class Game {
 		//Does the action specified as the parameter
 		switch(action) {
 			case "move":
-				this.move(object);
-				break;
+				return this.move(object);
 			case "pickup":
-				this.pickUp(object);
-				break;
+				return this.pickUp(object);
 			case "attack":
-				this.attack(object);
-				break;
+				return this.attack(object);
 			case "look":
-				this.look(object);
-				break;
+				return this.look(object);
 			case "use":
-				this.use(object);
-				break;
+				return this.use(object);
 			default:
 				throw new InvalidActionException();
 		}
 	}
 
-	public String move(String destination) {
+	private String move(String destination) {
 		try {
 			Connection conn = this.location.getConnection(destination);
 			this.location = Parser.parseLocation(destination);
@@ -66,13 +61,32 @@ public class Game {
 		} catch (InvalidEntityException e) {
 			e.printStackTrace();
 			return "There is no such object around.";
+		}	
+	}
+	
+	public String attack(String object) {
+		return "You injure yourself whilst trying to attack the " + object + ".";
+	}
+	
+	public String look(String object) {
+		Entity ent;
+		try {
+			ent = this.inventory.getEntity(object);
+			return "Its a " + object + ". " + ent.getDesc();
+		} catch (InvalidEntityException e) {
+			e.printStackTrace();
+			return "There is no such item in your inventory.";
 		}
-		
+
+	}
+	
+	public String use(String object) {
+		return "You can't use a " + object + ".";
 	}
 	
 	public boolean newGame() {
 		try {
-			this.location = Parser.parseLocation("start.xml");
+			this.location = Parser.parseLocation("/adventurexml/start.xml");
 			this.inventory = new Inventory();
 			return true;
 		} catch (FileNotFoundException e) {
@@ -97,7 +111,8 @@ public class Game {
 	
 	public boolean saveGame() {
 		Save save = new Save(this.location, this.inventory);
-		save.saveToFile();
+		//save.saveToFile();
+		return false;
 	}
 
 	public String describe() {
