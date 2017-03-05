@@ -11,7 +11,7 @@ public class Save {
 	private ArrayList<Connection> connections;
 	private ArrayList<Entity> entities;
 	
-	public static void main(String[] args){
+	private static void main(String[] args){
 		ArrayList<Connection> cons = new ArrayList<Connection>(3);
 		cons.add(new Connection("door","A blue door with a metal doorknob.","LivingRoom"));
 		cons.add(new Connection("window","A glass window with white borders, very classic.","Garden"));

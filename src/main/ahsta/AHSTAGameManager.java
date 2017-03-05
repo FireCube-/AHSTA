@@ -94,7 +94,7 @@ public class AHSTAGameManager {
 
         game = new Game();
 
-log.info(speechText);
+        log.info(speechText);
 
         boolean tryNewGame = game.newGame();
 
