@@ -20,11 +20,56 @@ public class Game {
 		option4Type = new IntentType();
 	}
 	
-	public String doAction(IntentType.Action action, String object) {
+	public String doAction(String action, String object) throws InvalidActionException {
 		//Does the action specified as the parameter
-		return "MASSIVE YACHT!";
+		switch(action) {
+			case "move":
+				this.move(object);
+				break;
+			case "pickup":
+				this.pickUp(object);
+				break;
+			case "attack":
+				this.attack(object);
+				break;
+			case "look":
+				this.look(object);
+				break;
+			case "use":
+				this.use(object);
+				break;
+			default:
+				throw new InvalidActionException();
+		}
 	}
 
+	public String move(String destination) {
+		try {
+			Connection conn = this.location.getConnection(destination);
+			this.location = Parser.parseLocation(destination);
+			return this.describe();
+		} catch (InvalidConnectionException e) {
+			e.printStackTrace();
+			return "There is no " + destination + " nearby.";
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return "You are unable to go this way!";
+		}
+	}
+
+	public String pickUp(String object) {
+		try {
+			Entity ent = this.location.getEntity(object);
+			this.location.removeEntity(ent);
+			this.inventory.add(ent);
+			return "The " + object + " has been added to your inventory.";
+		} catch (InvalidEntityException e) {
+			e.printStackTrace();
+			return "There is no such object around.";
+		}
+		
+	}
+	
 	public boolean newGame() {
 		try {
 			this.location = Parser.parseLocation("start.xml");
@@ -50,9 +95,13 @@ public class Game {
 		}
 	}
 	
-	public boolean saveGame(String name) {
+	public boolean saveGame() {
 		Save save = new Save(this.location, this.inventory);
-		save.saveToFile(name);
+		save.saveToFile();
+	}
+
+	public String describe() {
+		return this.location.describe() + " " + this.inventory.describe();
 	}
 
 }

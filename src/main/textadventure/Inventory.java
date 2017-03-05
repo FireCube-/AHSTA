@@ -17,6 +17,10 @@ public class Inventory {
 		return items.add(new Entity(type));
 	}
 
+	public boolean add(Entity e) {
+		return items.add(e);
+	}
+	
 	public boolean remove(String type) {
 		for (int i = 0; i < items.size(); i++) {
 			if (items.get(i).getName() == type) {
@@ -25,6 +29,18 @@ public class Inventory {
 			}
 		}
 		return false;
+	}
+	
+	public String describe() {
+		if (this.items.isEmpty()) {
+			return "You have nothing in your inventory.";
+		} else {
+			String ret = "You have ";
+			for (Entity e : this.items) {
+				ret += "a " + e.getName() + ", ";
+			}
+			return ret + " in your inventory.";
+		}
 	}
 
 }

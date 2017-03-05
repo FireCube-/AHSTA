@@ -52,7 +52,11 @@ public class Location {
 		throw new InvalidEntityException("Invalid entity search");
 	}
 	
-	//Someone else can clean this up
+	public boolean removeEntity(Entity e) {
+		return this.entities.remove(e);
+	}
+	
+	//Dont use
 	public String View(){
 		String connectionsDesc = "There is:";
 		for(int x = 0 ; x < connections.size() ; x++){
@@ -70,5 +74,8 @@ public class Location {
 		return this.desc + "\n" + connectionsDesc + entitiesDesc;
 	}
 	
+	public String describe() {
+		return "You are in a " + this.location.getName() + ". " + this.location.getDesc() + ".";
+	}
 	
 }
