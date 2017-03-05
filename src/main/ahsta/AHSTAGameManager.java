@@ -90,7 +90,18 @@ public class AHSTAGameManager {
 
         game = new Game();
 
+
+
+        boolean tryNewGame = game.newGame();
+
+        if (tryNewGame == true){
+            speechText = "New game created. " + game.describe();
+        }
+        else{
+            speechText = "New game was not created";
+        }
         return getTellSpeechletResponse(speechText);
+
     }
     public SpeechletResponse getExitIntentResponse (Intent intent, Session session){
         return null;

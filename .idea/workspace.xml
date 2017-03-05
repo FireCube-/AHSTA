@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bade21f-49cc-4264-96ee-e3544572a0a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ahsta/AHSTAGameManager.java" afterPath="$PROJECT_DIR$/src/main/ahsta/AHSTAGameManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ahsta/AHSTASpeechlet.java" afterPath="$PROJECT_DIR$/src/main/ahsta/AHSTASpeechlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,15 +18,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AHSTAGameManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AHSTAGameManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/ahsta/AHSTAGameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="107" column="35" lean-forward="false" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+            <state relative-caret-position="221">
+              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1488709251061" expanded="false" signature="3531:3541" ph=" { " />
-                <marker date="1488709251061" expanded="false" signature="3553:3559" ph=" }" />
+                <marker date="1488710419431" expanded="false" signature="3765:3775" ph=" { " />
+                <marker date="1488710419431" expanded="false" signature="3787:3793" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -47,7 +45,7 @@
       <file leaf-file-name="AHSTASpeechlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ahsta/AHSTASpeechlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
+            <state relative-caret-position="495">
               <caret line="68" column="91" lean-forward="false" selection-start-line="68" selection-start-column="91" selection-end-line="68" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,15 +68,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/textadventure/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+            <state relative-caret-position="714">
+              <caret line="99" column="13" lean-forward="false" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
               <folding>
-                <element signature="e#2500#2501#0" expanded="true" />
-                <element signature="e#2572#2573#0" expanded="true" />
-                <marker date="1488710013098" expanded="true" signature="2569:2573" ph="{...}" />
+                <element signature="e#1725#1726#0" expanded="true" />
+                <element signature="e#1804#1805#0" expanded="true" />
+                <element signature="e#2123#2124#0" expanded="true" />
+                <element signature="e#2170#2171#0" expanded="true" />
+                <element signature="e#2983#2984#0" expanded="true" />
+                <element signature="e#3055#3056#0" expanded="true" />
+                <marker date="1488710019435" expanded="true" signature="3052:3056" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -109,9 +111,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding>
-                <marker date="1488708679869" expanded="true" signature="1013:1017" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/src/main/textadventure/PassingIntentType.java" />
         <option value="$PROJECT_DIR$/src/main/textadventure/PassingIntent.java" />
         <option value="$PROJECT_DIR$/src/main/ahsta/AHSTASpeechlet.java" />
-        <option value="$PROJECT_DIR$/src/main/ahsta/AHSTAGameManager.java" />
         <option value="$PROJECT_DIR$/src/main/textadventure/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/ahsta/AHSTAGameManager.java" />
       </list>
     </option>
   </component>
@@ -478,8 +478,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1488709251061" expanded="false" signature="3531:3541" ph=" { " />
-            <marker date="1488709251061" expanded="false" signature="3553:3559" ph=" }" />
+            <marker date="1488710419431" expanded="false" signature="3765:3775" ph=" { " />
+            <marker date="1488710419431" expanded="false" signature="3787:3793" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -511,9 +511,13 @@
         <state relative-caret-position="221">
           <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
           <folding>
-            <element signature="e#2500#2501#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
-            <marker date="1488710013098" expanded="true" signature="2569:2573" ph="{...}" />
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1804#1805#0" expanded="true" />
+            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#2170#2171#0" expanded="true" />
+            <element signature="e#2983#2984#0" expanded="true" />
+            <element signature="e#3055#3056#0" expanded="true" />
+            <marker date="1488710019435" expanded="true" signature="3052:3056" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -538,9 +542,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <marker date="1488708679869" expanded="true" signature="1013:1017" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -558,8 +560,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1488709251061" expanded="false" signature="3531:3541" ph=" { " />
-            <marker date="1488709251061" expanded="false" signature="3553:3559" ph=" }" />
+            <marker date="1488710419431" expanded="false" signature="3765:3775" ph=" { " />
+            <marker date="1488710419431" expanded="false" signature="3787:3793" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -591,9 +593,13 @@
         <state relative-caret-position="221">
           <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
           <folding>
-            <element signature="e#2500#2501#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
-            <marker date="1488710013098" expanded="true" signature="2569:2573" ph="{...}" />
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1804#1805#0" expanded="true" />
+            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#2170#2171#0" expanded="true" />
+            <element signature="e#2983#2984#0" expanded="true" />
+            <element signature="e#3055#3056#0" expanded="true" />
+            <marker date="1488710019435" expanded="true" signature="3052:3056" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -618,9 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <marker date="1488708679869" expanded="true" signature="1013:1017" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -648,9 +652,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <marker date="1488708679869" expanded="true" signature="1013:1017" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -693,9 +695,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/textadventure/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="99" column="13" lean-forward="false" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+          <folding>
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1804#1805#0" expanded="true" />
+            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#2170#2171#0" expanded="true" />
+            <element signature="e#2983#2984#0" expanded="true" />
+            <element signature="e#3055#3056#0" expanded="true" />
+            <marker date="1488710019435" expanded="true" signature="3052:3056" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ahsta/AHSTASpeechlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
+        <state relative-caret-position="495">
           <caret line="68" column="91" lean-forward="false" selection-start-line="68" selection-start-column="91" selection-end-line="68" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -713,24 +731,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ahsta/AHSTAGameManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="107" column="35" lean-forward="false" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+        <state relative-caret-position="221">
+          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1488709251061" expanded="false" signature="3531:3541" ph=" { " />
-            <marker date="1488709251061" expanded="false" signature="3553:3559" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/textadventure/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
-          <folding>
-            <element signature="e#2500#2501#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
-            <marker date="1488710013098" expanded="true" signature="2569:2573" ph="{...}" />
+            <marker date="1488710419431" expanded="false" signature="3765:3775" ph=" { " />
+            <marker date="1488710419431" expanded="false" signature="3787:3793" ph=" }" />
           </folding>
         </state>
       </provider>
