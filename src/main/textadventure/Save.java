@@ -6,18 +6,22 @@ import java.util.ArrayList;
 public class Save {
 	
 	private Location location;
-	private ArrayList<Entity> inventory;
+	private Inventory inventory;
 	
 	public Save(Location location, Collection<Entity> inventory) {
 		this.location = location;
-		this.inventory = new ArrayList<>(inventory);
+		this.inventory = new Inventory(inventory);
+	}
+	public Save(Location location, Inventory inventory) {
+		this.location = location;
+		this.inventory = inventory;
 	}
 	
 	public Location getLocation() {
 		return this.location;
 	}
 	
-	public ArrayList<Entity> getInventory() {
+	public Inventory getInventory() {
 		return this.inventory;
 	}
 	

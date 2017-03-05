@@ -44,7 +44,7 @@ public class Parser {
 		throw new XMLParseException("Invalid Content");
 	}
 	
-	public Save parseSave(String name) throws FileNotFoundException {
+	public static Save parseSave(String name) throws FileNotFoundException {
 		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
 		BufferedReader br = new BufferedReader(fr);
 		String check = Parser.getTag(br);
@@ -73,10 +73,10 @@ public class Parser {
 									throw new XMLParseException("Invalid desc tag");
 								break;
 							case "entity":
-								locEntities.add(this.parseEntity(br));
+								locEntities.add(parseEntity(br));
 								break;
 							case "connection":
-								locConnections.add(this.parseConnection(br));
+								locConnections.add(parseConnection(br));
 								break;
 							default:
 								throw new XMLParseException("Invalid XML");
@@ -85,7 +85,7 @@ public class Parser {
 					}
 					break;
 				case "entity":
-					entities.add(this.parseEntity(br));
+					entities.add(parseEntity(br));
 					break;
 				default:
 					throw new XMLParseException("Invalid XML");
@@ -95,7 +95,7 @@ public class Parser {
 		return new Save(new Location(locName, locConnections, locDesc, locEntities), entities);
 	}
 	
-	public Location parseLocation(String name) throws FileNotFoundException {
+	public static Location parseLocation(String name) throws FileNotFoundException {
 		//Loads the location from xml and stores it in the location member variable.
 		FileReader fr = new FileReader(System.getProperty("user.dir") + "/" + name + ".xml");
 		BufferedReader br = new BufferedReader(fr);
@@ -120,10 +120,10 @@ public class Parser {
 						throw new XMLParseException("Invalid desc tag");
 					break;
 				case "entity":
-					locEntities.add(this.parseEntity(br));
+					locEntities.add(parseEntity(br));
 					break;
 				case "connection":
-					locConnections.add(this.parseConnection(br));
+					locConnections.add(parseConnection(br));
 					break;
 				default:
 					throw new XMLParseException("Invalid XML");
@@ -133,7 +133,7 @@ public class Parser {
 		return new Location(locName, locConnections, locDesc, locEntities);
 	}
 
-	private Entity parseEntity(BufferedReader br) {
+	private static Entity parseEntity(BufferedReader br) {
 		String tag = Parser.getTag(br);
 		String eName = "";
 		String eDesc = "";
@@ -163,7 +163,7 @@ public class Parser {
 		return new Entity(eName, eDesc);
 	}
 	
-	private Connection parseConnection(BufferedReader br) {
+	private static Connection parseConnection(BufferedReader br) {
 		String tag = Parser.getTag(br);
 		String cName = "";
 		String cDesc = "";

@@ -1,5 +1,7 @@
 package textadventure;
 
+import java.io.FileNotFoundException;
+
 public class Game {
 	
 	private Location location;
@@ -20,7 +22,37 @@ public class Game {
 	
 	public String doAction(IntentType.Action action, String object) {
 		//Does the action specified as the parameter
-		return "Hello, world!";
+		return "MASSIVE YACHT!";
+	}
+
+	public boolean newGame() {
+		try {
+			this.location = Parser.parseLocation("start.xml");
+			this.inventory = new Inventory();
+			return true;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("start.xml not found");
+			return false;
+		}
+	}
+	
+	public boolean loadGame(String name) {
+		try {
+			Save save = Parser.parseSave(System.getProperty("user.dir") + "/../../saves/" + name + ".xml");
+			this.inventory = save.getInventory();
+			this.location = save.getLocation();
+			return true;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println(name + ".xml not found");
+			return false;
+		}
+	}
+	
+	public boolean saveGame(String name) {
+		Save save = new Save(this.location, this.inventory);
+		save.saveToFile(name);
 	}
 
 }

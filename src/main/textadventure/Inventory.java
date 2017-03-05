@@ -5,11 +5,19 @@ public class Inventory {
 
 	private ArrayList<Entity> items;
 
-	public boolean addItem(String type) {
+	public Inventory() {
+		this.items = new ArrayList<>();
+	}	
+
+	public Inventory(Collection<Entity> inventory) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public boolean add(String type) {
 		return items.add(new Entity(type));
 	}
 
-	public boolean removeItem(String type) {
+	public boolean remove(String type) {
 		for (int i = 0; i < items.size(); i++) {
 			if (items.get(i).getName() == type) {
 				items.remove(i);
