@@ -1,5 +1,5 @@
 package textadventure;
-import java.util.Set;
+import java.util.Collection;
 import java.util.HashSet;
 
 public class Entity {
@@ -17,7 +17,7 @@ public class Entity {
 		this.desc = desc;
 	}
 
-	public Entity(String name, String desc, Set<String> properties){
+	public Entity(String name, String desc, Collection<String> properties){
 		this.name  = name;
 		this.desc  = desc;
 		this.properties =  new HashSet<>(properties);		
