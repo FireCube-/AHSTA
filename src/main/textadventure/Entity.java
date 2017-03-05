@@ -4,10 +4,9 @@ import java.util.HashSet;
 
 public class Entity {
 	
-	String name;
-	String desc;
-	
-	HashSet<String> properties = new HashSet<>();
+	private String name;
+	private String desc;
+	private HashSet<String> properties = new HashSet<>();
 	
 	Entity(String name){
 		this.name = name;
