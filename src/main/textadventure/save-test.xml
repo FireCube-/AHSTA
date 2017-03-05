@@ -1,0 +1,10 @@
+<save>
+	<location>
+		<name>test location</name>
+		<desc>a test location</desc>
+	</location>
+	<entity>
+		<name>test entity</name>
+		<desc>test desc</desc>
+	</entity>
+</save>

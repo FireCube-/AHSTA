@@ -1,23 +1,49 @@
-OptionOneIntent pick option one
-OptionOneIntent choose option one
-OptionOneIntent option one
-OptionOneIntent do option one 
-OptionOneIntent first option
-OptionTwoIntent pick option two
-OptionTwoIntent choose option two
-OptionTwoIntent option two
-OptionTwoIntent do option two 
-OptionTwoIntent second option
-OptionThreeIntent pick option three
-OptionThreeIntent choose option three
-OptionThreeIntent option three
-OptionThreeIntent do option three 
-OptionThreeIntent third option
-OptionFourIntent pick option four
-OptionFourIntent choose option four
-OptionFourIntent option four
-OptionFourIntent do option four 
-OptionFourIntent fourth option
+MoveIntent move {Object}
+MoveIntent move to {Object}
+MoveIntent move towards {Object}
+MoveIntent walk {Object}
+MoveIntent walk to {Object}
+MoveIntent walk towards {Object}
+MoveIntent run {Object}
+MoveIntent run to {Object}
+MoveIntent run towards {Object}
+MoveIntent move to the {Object}
+MoveIntent walk to the {Object}
+MoveIntent run to the {Object}
+MoveIntent go {Object}
+MoveIntent go to {Object}
+MoveIntent go towards {Object}
+MoveIntent go to the {Object}
+MoveIntent walk through {Object}
+MoveIntent run through {Object}
+MoveIntent go through {Object}
+MoveIntent move through {Object}
+MoveIntent walk through the {Object}
+MoveIntent run through the {Object}
+MoveIntent go through the {Object}
+MoveIntent move through the {Object}
+PickUpIntent pick up the {Object}
+PickUpIntent pick up {Object}
+PickUpIntent take {Object}
+PickUpIntent take the {Object}
+AttackIntent attack the {Object}
+AttackIntent hit the {Object}
+AttackIntent punch the {Object}
+AttackIntent break down the {Object}
+AttackIntent slap the {Object}
+LookIntent look {Object}
+LookIntent look at {Object}
+LookIntent look at the {Object}
+LookIntent take a closer look at {Object}
+LookIntent take a closer look at the {Object}
+UseIntent use the {Object}
+UseIntent use {Object}
+UseIntent eat the {Object}
+UseIntent eat {Object}
+UseIntent drink the {Object}
+UseIntent drink {Object}
+UseIntent switch on the {Object}
+UseIntent switch on {Object}
 NewGameIntent start new game
 NewGameIntent begin new game
 NewGameIntent new game

@@ -16,15 +16,15 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 
 public class AHSTASpeechlet implements Speechlet {
 
-	private static final Logger log = LoggerFactory.getLogger(AHSTASpeechlet.class);
-	
+	private static final Logger log = LoggerFactory.getLogger(ahsta.AHSTASpeechlet.class);
+
 
 	public static void main(String[] args) {
-		
+
 	}
-	
-    private AHSTAGameManager ahstaGameManager;
-	
+
+	private AHSTAGameManager ahstaGameManager;
+
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
@@ -37,24 +37,27 @@ public class AHSTASpeechlet implements Speechlet {
 	public SpeechletResponse onLaunch(LaunchRequest request, Session session) throws SpeechletException {
 		log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 		return ahstaGameManager.getLaunchResponse(request, session);
-}
+	}
 
 	@Override
 	public SpeechletResponse onIntent(IntentRequest request, Session session) throws SpeechletException {
 		log.info("onIntent requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 
 		Intent intent = request.getIntent();
-		if ("OptionOneIntent".equals(intent.getName())) {
-			return ahstaGameManager.getOption1IntentResponse(intent, session);
+		if ("MoveIntent".equals(intent.getName())) {
+			return ahstaGameManager.getMoveIntentResponse(intent, session);
 
-		} else if ("OptionTwoIntent".equals(intent.getName())) {
-			return ahstaGameManager.getOption2IntentResponse(intent, session);
+		} else if ("PickUpIntent".equals(intent.getName())) {
+			return ahstaGameManager.getPickUpIntentResponse(intent, session);
 
-		} else if ("OptionThreeIntent".equals(intent.getName())) {
-			return ahstaGameManager.getOption3IntentResponse(intent, session);
+		} else if ("AttackIntent".equals(intent.getName())) {
+			return ahstaGameManager.getAttackIntentResponse(intent, session);
 
-		} else if ("OptionFourIntent".equals(intent.getName())) {
-			return ahstaGameManager.getOption4IntentResponse(intent, session);
+		} else if ("UseIntent".equals(intent.getName())) {
+			return ahstaGameManager.getUseIntentResponse(intent, session);
+
+		} else if ("LookIntent".equals(intent.getName())) {
+			return ahstaGameManager.getLookIntentResponse(intent, session);
 
 		} else if ("NewGameIntent".equals(intent.getName())) {
 			return ahstaGameManager.getNewGameIntentResponse(intent, session);

@@ -23,56 +23,46 @@ public class AHSTAGameManager {
 
         return getTellSpeechletResponse(speechText);
     }
-  
-    public SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
 
+    public SpeechletResponse getMoveIntentResponse (Intent intent, Session session){
         String speechText = new String();
-        IntentType newOption1 = new IntentType();
-        IntentType newOption2 = new IntentType();
-        IntentType newOption3 = new IntentType();
-        IntentType newOption4 = new IntentType();
-
-
-
-        //game.doAction(game.option1Type, newOption1, newOption2, newOption3, newOption4, speechText);
-
-        game.option1Type = newOption1;
-        game.option2Type = newOption2;
-        game.option3Type = newOption3;
-        game.option4Type = newOption4;
-
-
+        speechText = game.doAction("move", intent.getSlot("Object").getValue().toString());
         return getTellSpeechletResponse(speechText);
     }
-    public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
-        String speechText = game.doAction(game.option2Type.action, game.option2Type.object);
-
+    public SpeechletResponse getPickUpIntentResponse (Intent intent, Session session){
+        String speechText = new String();
+        speechText = game.doAction("pickup", intent.getSlot("Object").getValue().toString());
         return getTellSpeechletResponse(speechText);
     }
-    public SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
-        String speechText = game.doAction(game.option3Type.action, game.option3Type.object);
-
+    public SpeechletResponse getAttackIntentResponse (Intent intent, Session session){
+        String speechText = new String();
+        speechText = game.doAction("attack", intent.getSlot("Object").getValue().toString());
         return getTellSpeechletResponse(speechText);
     }
-    public SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
-        String speechText = game.doAction(game.option4Type.action, game.option4Type.object);
-
+    public SpeechletResponse getUseIntentResponse (Intent intent, Session session){
+        String speechText = new String();
+        speechText = game.doAction("use", intent.getSlot("Object").getValue().toString());
+        return getTellSpeechletResponse(speechText);
+    }
+    public SpeechletResponse getLookIntentResponse (Intent intent, Session session){
+        String speechText = new String();
+        speechText = game.doAction("look", intent.getSlot("Object").getValue().toString());
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
 
-       game = new Game();
+        game = new Game();
 
         String speechText = "New game started with!";
 
-       
+
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getExitIntentResponse (Intent intent, Session session){
         return null;
     }
 
-    
+
     private SpeechletResponse getTellSpeechletResponse(String speechText) {
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
@@ -85,7 +75,7 @@ public class AHSTAGameManager {
 
         return SpeechletResponse.newTellResponse(speech, card);
     }
-    
+
     private SpeechletResponse getAskSpeechletResponse(String speechText, String repromptText) {
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
@@ -106,5 +96,5 @@ public class AHSTAGameManager {
     }
 
 
-	
+
 }
