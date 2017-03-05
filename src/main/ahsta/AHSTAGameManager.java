@@ -36,6 +36,12 @@ public class AHSTAGameManager {
 
         murrayFunction(game.option1Type, newOption1, newOption2, newOption3, newOption4, speechText);
 
+        game.option1Type = newOption1;
+        game.option2Type = newOption2;
+        game.option3Type = newOption3;
+        game.option4Type = newOption4;
+
+
         return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
