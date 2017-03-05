@@ -1,5 +1,8 @@
 package ahsta;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
@@ -14,6 +17,7 @@ import textadventure.IntentType;
 
 public class AHSTAGameManager {
 
+    private static final Logger log = LoggerFactory.getLogger(ahsta.AHSTAGameManager.class);
     private Game game;
 
     //placeholder
@@ -90,7 +94,7 @@ public class AHSTAGameManager {
 
         game = new Game();
 
-
+log.info(speechText);
 
         boolean tryNewGame = game.newGame();
 
@@ -100,6 +104,11 @@ public class AHSTAGameManager {
         else{
             speechText = "New game was not created";
         }
+
+        log.info(speechText);
+
+
+
         return getTellSpeechletResponse(speechText);
 
     }
