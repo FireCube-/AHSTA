@@ -1,8 +1,11 @@
 package textadventure;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.ArrayList;
 
 public class Save {
 
@@ -10,11 +13,14 @@ public class Save {
 	private Inventory inventory;
 	private ArrayList<Connection> connections;
 	private ArrayList<Entity> entities;
-	
+	private BufferedWriter out;
+	private String file;
+
 	public static void main(String[] args){
+		
 		ArrayList<Connection> cons = new ArrayList<Connection>(3);
 		cons.add(new Connection("door","A blue door with a metal doorknob.","LivingRoom"));
-		cons.add(new Connection("window","A glass window with white borders, very classic.","Garden"));
+	 	cons.add(new Connection("window","A glass window with white borders, very classic.","Garden"));
 		cons.add(new Connection("door","A white door with a metal doorknob.","DiningRoom"));
 		ArrayList<Entity> ents = new ArrayList<Entity>(2);
 		HashSet<String> hs1 = new HashSet<String>();
@@ -29,24 +35,29 @@ public class Save {
 		hs3.add("sharp");hs3.add("metal");hs3.add("cold");
 		its.add(new Entity("knife", "A shar metal knife. It's cold to the touch.", hs3));
 		Inventory inv = new Inventory(its);
-		Save save = new Save(loc, inv);
+		Save save = new Save(loc, inv, "save-file.xml");
 		save.Catalog();
 	}
 
-	public Save(Location location, Collection<Entity> inventory) {
+	public Save(Location location, Collection<Entity> inventory, String file) {
 		this.location = location;
 		this.inventory = new Inventory(inventory);
 		this.connections = location.getConnections();
 		this.entities = location.getEntities();
+		this.file = file;
 	}
-	public Save(Location location, Inventory inventory) {
+	public Save(Location location, Inventory inventory, String file) {
 		this.location = location;
 		this.inventory = inventory;
 		this.connections = location.getConnections();
 		this.entities = location.getEntities();
+		this.file = file;
 	}
 
 	public void Catalog(){
+
+		startWriting(file);
+
 		print("<save>\n");
 		print("	<location>\n");
 		print("		<name>" + location.getName() + "</name>\n");
@@ -94,6 +105,9 @@ public class Save {
 
 		print("	</inventory>\n");
 		print("</save>\n");
+
+		endWriting();
+
 	}
 
 	public Location getLocation() {
@@ -103,9 +117,32 @@ public class Save {
 	public Inventory getInventory() {
 		return this.inventory;
 	}
+	void startWriting(String file){
+
+		try {
+			out = new BufferedWriter(new FileWriter(file));
+		} catch (IOException e) {
+			System.out.println("Error initilising.");
+		}
+		
+	}
+	void endWriting(){
+		try {
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	void print(String str){
 		System.out.print(str);
+		try {
+			out.write(str);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
