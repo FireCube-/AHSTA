@@ -8,30 +8,30 @@ public class Entity {
 	private String desc;
 	private HashSet<String> properties = new HashSet<>();
 	
-	Entity(String name){
+	public Entity(String name){
 		this.name = name;
 	}
 
-	Entity(String name, String desc){
+	public Entity(String name, String desc){
 		this.name = name;
 		this.desc = desc;
 	}
 
-	Entity(String name, String desc, Set<String> properties){
+	public Entity(String name, String desc, Set<String> properties){
 		this.name  = name;
 		this.desc  = desc;
 		this.properties =  new HashSet<>(properties);		
 	}
 	
-	String getName(){
+	public String getName(){
 		return name;
 	}
 	
-	String getDesc(){
+	public String getDesc(){
 		return desc;
 	}
 	
-	boolean hasProperty(String prop){
+	public boolean hasProperty(String prop){
 		return this.properties.contains(prop);
 	}
 
