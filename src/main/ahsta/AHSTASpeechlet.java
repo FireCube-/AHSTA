@@ -12,9 +12,7 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
-
-
+import com.amazonaws.services.dynamodbv2.*;
 
 public class AHSTASpeechlet implements Speechlet {
 
