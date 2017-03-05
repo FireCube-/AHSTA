@@ -47,53 +47,53 @@ public class Save {
 	}
 
 	public void Catalog(){
-		print("<Save>\n");
-		print("	<Location>\n");
-		print("		<Name>" + location.getName() + "</Name>\n");
-		print("		<Desc>" + location.getDesc() + "</Desc>\n");
+		print("<save>\n");
+		print("	<location>\n");
+		print("		<name>" + location.getName() + "</name>\n");
+		print("		<desc>" + location.getDesc() + "</desc>\n");
 
 		for (int a = 0 ; a < entities.size() ; a++){
 			Entity entity = entities.get(a);
-			print("		<Entity>\n");
-			print("			<Name>" + entity.getName() + "</Name>\n");
-			print("			<Desc>" + entity.getDesc() + "</Desc>\n");
+			print("		<entity>\n");
+			print("			<name>" + entity.getName() + "</name>\n");
+			print("			<desc>" + entity.getDesc() + "</desc>\n");
 
 			ArrayList<String> props = new ArrayList<String>(entity.getProperties());
 			for(int b = 0 ; b < props.size() ; b++){
-				print("			<Property>" + props.get(b) + "</Property>\n");
+				print("			<property>" + props.get(b) + "</property>\n");
 			}
 
-			print("		</Entity>\n");
+			print("		</entity>\n");
 
 		}
 		for (int a = 0 ; a < connections.size() ; a++){
 			Connection connection = connections.get(a);
-			print("		<Connection>");
-			print("			<Name>" + connection.getName() + "</Name>\n");
-			print("			<Desc>" + connection.getDesc() + "</Desc>\n");
-			print("			<Destination>" + connection.getDestination() + "</Destination>\n");
-			print("		</Connection>/n");
+			print("		<connection>\n");
+			print("			<name>" + connection.getName() + "</name>\n");
+			print("			<desc>" + connection.getDesc() + "</desc>\n");
+			print("			<destination>" + connection.getDestination() + "</destination>\n");
+			print("		</connection>\n");
 		}
-		print("	</Location>\n");
-		print("	<Inventory>\n");
+		print("	</location>\n");
+		print("	<inventory>\n");
 
 		for (int a = 0 ; a < inventory.size() ; a++){
 			Entity entity = inventory.get(a);
-			print("		<Entity>\n");
-			print("			<Name>" + entity.getName() + "</Name>\n");
-			print("			<Desc>" + entity.getDesc() + "</Desc>\n");
+			print("		<entity>\n");
+			print("			<name>" + entity.getName() + "</name>\n");
+			print("			<desc>" + entity.getDesc() + "</desc>\n");
 
 			ArrayList<String> props = new ArrayList<String>(entity.getProperties());
 			for(int b = 0 ; b < props.size() ; b++){
-				print("			<Property>" + props.get(b) + "</Property>\n");
+				print("			<property>" + props.get(b) + "</property>\n");
 			}
 
-			print("		</Entity>\n");
+			print("		</entity>\n");
 
 		}
 
-		print("	</Inventory>\n");
-		print("</Save>\n");
+		print("	</inventory>\n");
+		print("</save>\n");
 	}
 
 	public Location getLocation() {

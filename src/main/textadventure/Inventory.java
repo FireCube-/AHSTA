@@ -10,7 +10,7 @@ public class Inventory {
 	}	
 
 	public Inventory(Collection<Entity> inventory) {
-		// TODO Auto-generated constructor stub
+		this.items = new ArrayList<>(inventory);
 	}
 
 	public boolean add(String type) {
