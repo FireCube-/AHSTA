@@ -12,15 +12,12 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
-
 
 
 public class AHSTASpeechlet implements Speechlet {
 
 	private static final Logger log = LoggerFactory.getLogger(AHSTASpeechlet.class);
 	
-    private AmazonDynamoDBClient amazonDynamoDBClient;
 
 	public static void main(String[] args) {
 		
@@ -31,8 +28,7 @@ public class AHSTASpeechlet implements Speechlet {
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-
-		initializeComponents();
+		ahstaGameManager = new AHSTAGameManager();
 	}
 
 	@Override
@@ -46,7 +42,6 @@ public class AHSTASpeechlet implements Speechlet {
 	@Override
 	public SpeechletResponse onIntent(IntentRequest request, Session session) throws SpeechletException {
 		log.info("onIntent requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-		initializeComponents();
 
 		Intent intent = request.getIntent();
 		if ("OptionOneIntent".equals(intent.getName())) {
@@ -76,13 +71,6 @@ public class AHSTASpeechlet implements Speechlet {
 	public void onSessionEnded(SessionEndedRequest request, Session session) throws SpeechletException {
 		log.info("onSessionEnded requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 
-	}
-	
-	public void initializeComponents() {
-        if (amazonDynamoDBClient == null) {
-            amazonDynamoDBClient = new AmazonDynamoDBClient();
-            ahstaGameManager = new AHSTAGameManager(amazonDynamoDBClient);
-        }
 	}
 
 }

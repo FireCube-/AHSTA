@@ -1,8 +1,0 @@
-<location>
-	<name>test room</name>
-	<desc>room desc</desc>
-	<entity>
-		<name>entity name</name>
-		<desc>entity desc</desc>
-	</entity>
-</location>
