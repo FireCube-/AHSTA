@@ -48,6 +48,4 @@ public class Location {
 		this.desc = desc;
 	}
 	
-	
-	
 }

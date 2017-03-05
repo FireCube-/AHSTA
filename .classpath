@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/java"/>
-	<classpathentry kind="src" path="ask"/>
+	<classpathentry kind="src" path="src/main"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="dependencies/alexa-skills-kit-samples-1.0-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="target/dependency/alexa-skills-kit-1.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/aws-java-sdk-core-1.9.40.jar"/>
+	<classpathentry kind="lib" path="target/dependency/aws-java-sdk-dynamodb-1.9.40.jar"/>
+	<classpathentry kind="lib" path="target/dependency/aws-java-sdk-kms-1.9.40.jar"/>
+	<classpathentry kind="lib" path="target/dependency/aws-java-sdk-s3-1.9.40.jar"/>
+	<classpathentry kind="lib" path="target/dependency/aws-lambda-java-core-1.0.0.jar"/>
+	<classpathentry kind="lib" path="target/dependency/aws-lambda-java-log4j-1.0.0.jar"/>
+	<classpathentry kind="lib" path="target/dependency/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="target/dependency/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="target/dependency/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="target/dependency/httpclient-4.3.4.jar"/>
+	<classpathentry kind="lib" path="target/dependency/httpcore-4.3.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jackson-annotations-2.3.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jackson-core-2.3.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jackson-databind-2.3.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/javax.servlet-3.0.0.v201112011016.jar"/>
+	<classpathentry kind="lib" path="target/dependency/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jetty-http-9.0.6.v20130930.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jetty-io-9.0.6.v20130930.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jetty-security-9.0.6.v20130930.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jetty-server-9.0.6.v20130930.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jetty-servlet-9.0.6.v20130930.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jetty-util-9.0.6.v20130930.jar"/>
+	<classpathentry kind="lib" path="target/dependency/joda-time-2.9.7.jar"/>
+	<classpathentry kind="lib" path="target/dependency/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="target/dependency/org.apache.commons.io-2.4.jar"/>
+	<classpathentry kind="lib" path="target/dependency/slf4j-api-1.7.10.jar"/>
+	<classpathentry kind="lib" path="target/dependency/slf4j-log4j12-1.7.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
