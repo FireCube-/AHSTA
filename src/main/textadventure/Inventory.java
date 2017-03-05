@@ -41,6 +41,8 @@ public class Inventory {
 			}
 			return ret + " in your inventory.";
 		}
+	}
+	
 	public int size(){
 		return items.size();
 	}
@@ -53,4 +55,11 @@ public class Inventory {
 		return items.get(x);
 	}
 
+	public Entity getEntity(String name) throws InvalidEntityException {
+		for (Entity e : this.items) {
+			if (e.getName() == name)
+				return e;
+		}
+		throw new InvalidEntityException("Invalid entity search");
+	}
 }
