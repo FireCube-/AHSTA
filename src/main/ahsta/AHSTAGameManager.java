@@ -7,32 +7,47 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
-import com.amazonaws.services.dynamodbv2.*;
+import textadventure.Game;
+
 
 public class AHSTAGameManager {
+
+    private Game game;
 
     //placeholder
     public SpeechletResponse getLaunchResponse(LaunchRequest request, Session session) {
         String speechText;
-       
+
         speechText = "It is almost harvesting season!";
 
         return getTellSpeechletResponse(speechText);
     }
   
     public SpeechletResponse getOption1IntentResponse (Intent intent, Session session){
-        return null;
+
+        String speechText = murrayFunction(game.option1Type.action, game.option1Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption2IntentResponse (Intent intent, Session session){
-        return null;
+        String speechText = murrayFunction(game.option2Type.action, game.option2Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption3IntentResponse (Intent intent, Session session){
-        return null;
+        String speechText = murrayFunction(game.option3Type.action, game.option3Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getOption4IntentResponse (Intent intent, Session session){
-        return null;
+        String speechText = murrayFunction(game.option4Type.action, game.option4Type.object);
+
+        return getTellSpeechletResponse(speechText);
     }
     public SpeechletResponse getNewGameIntentResponse (Intent intent, Session session){
+
+       game = new Game();
+
         String speechText = "New game started with!";
 
        
