@@ -24,6 +24,13 @@ public class Location {
 		this.connections = connections;
 		this.setDesc(desc);
 	}
+	
+	Location(String name, ArrayList<Connection> connections, String desc, ArrayList<Entity> entities) {
+		this.setName(name);
+		this.connections = connections;
+		this.setDesc(desc);
+		this.entities = entities;
+	}
 
 	public String getName() {
 		return name;
