@@ -19,9 +19,9 @@ public class Save {
 	public static void main(String[] args){
 		
 		ArrayList<Connection> cons = new ArrayList<Connection>(3);
-		cons.add(new Connection("door","A blue door with a metal doorknob.","LivingRoom"));
-	 	cons.add(new Connection("window","A glass window with white borders, very classic.","Garden"));
-		cons.add(new Connection("door","A white door with a metal doorknob.","DiningRoom"));
+		cons.add(new Connection("door","LivingRoom","A blue door with a metal doorknob."));
+	 	cons.add(new Connection("window","Garden","A glass window with white borders, very classic."));
+		cons.add(new Connection("door","DiningRoom","A white door with a metal doorknob."));
 		ArrayList<Entity> ents = new ArrayList<Entity>(2);
 		HashSet<String> hs1 = new HashSet<String>();
 		hs1.add("hard");hs1.add("metal");

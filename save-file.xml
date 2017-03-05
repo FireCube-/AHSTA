@@ -1,0 +1,43 @@
+<save>
+	<location>
+		<name>Kitchen</name>
+		<desc>A small kitchen, with black and white tiles.</desc>
+		<entity>
+			<name>key</name>
+			<desc>A small metal key. Looks quite new.</desc>
+			<property>metal</property>
+			<property>hard</property>
+		</entity>
+		<entity>
+			<name>candle</name>
+			<desc>A black candle. Could probably be molded.</desc>
+			<property>malleble</property>
+			<property>black</property>
+			<property>wax</property>
+		</entity>
+		<connection>
+			<name>door</name>
+			<desc>A blue door with a metal doorknob.</desc>
+			<destination>LivingRoom</destination>
+		</connection>
+		<connection>
+			<name>window</name>
+			<desc>A glass window with white borders, very classic.</desc>
+			<destination>Garden</destination>
+		</connection>
+		<connection>
+			<name>door</name>
+			<desc>A white door with a metal doorknob.</desc>
+			<destination>DiningRoom</destination>
+		</connection>
+	</location>
+	<inventory>
+		<entity>
+			<name>knife</name>
+			<desc>A shar metal knife. It's cold to the touch.</desc>
+			<property>metal</property>
+			<property>cold</property>
+			<property>sharp</property>
+		</entity>
+	</inventory>
+</save>
